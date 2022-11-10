@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('number_of_servings');
             $table->date('updated_at');
             $table->date('created_at');
-            $table->string('path_to_image')->nullable();
+            $table->string('image')->nullable();
             $table->string('link')->nullable();
 
         });
