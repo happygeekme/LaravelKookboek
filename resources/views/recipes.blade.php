@@ -2,7 +2,7 @@
     <x-slot name="content">
         @foreach($recipes as $recipe)
             <div>
-            <a href="/recipes/{{ $recipe->title }}" >{!! $recipe->title !!}</a>
+            <a href="/recipes/{{ $recipe->slug }}" >{!! $recipe->title !!}</a>
             <img src="{{ $recipe->image }}" alt="Plate" width="200" />
             </div>
         @endforeach
