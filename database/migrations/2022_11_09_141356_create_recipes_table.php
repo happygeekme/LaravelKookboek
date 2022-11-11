@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->text('instructions');
             $table->text('note')->nullable();
-            $table->integer('number_of_servings');
+            $table->integer('number_of_servings')->nullable();
             $table->date('updated_at');
             $table->date('created_at');
-            $table->string('path_to_image')->nullable();
+            $table->string('image')->nullable();
             $table->string('link')->nullable();
 
         });

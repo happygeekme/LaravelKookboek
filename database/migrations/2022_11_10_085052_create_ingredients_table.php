@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('recipe_id');
             $table->string('measurement')->nullable();
-            $table->double('quantity')->nullable();
+            $table->float('quantity', places: 1)->nullable();
             $table->date('updated_at');
             $table->date('created_at');
         });
