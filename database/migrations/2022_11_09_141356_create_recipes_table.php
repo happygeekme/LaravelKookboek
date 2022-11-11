@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('title')->unique();
+            $table->string('slug')->unique();
             $table->text('instructions');
             $table->text('note')->nullable();
             $table->integer('number_of_servings')->nullable();

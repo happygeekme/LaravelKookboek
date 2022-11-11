@@ -78,6 +78,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $luuk->id,
             'title' => 'Pasta met kipfilet en kruidenkaas',
+            'slug' => 'pasta-met-kipfilet-en-kruidenkaas',
             'instructions' =>
                  '<p>Snijd de kipfilet in stukjes en kruid deze met cajunkruiden.
                     Ontdooi de spinazie op laag vuur in een steelpannetje en kook
@@ -128,6 +129,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $manon->id,
             'title' => 'Pasta met spinazie roomsaus',
+            'slug' => 'pasta-met-spinazie_roomsaus',
             'instructions' =>
                     '<p>
                     1. Kook de pasta volgens de gebruiksaanwijzing op de verpakking.
@@ -233,6 +235,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $jitske->id,
             'title' => 'Khao Soi Noedelsoep',
+            'slug' => 'khao-soi-noedelsoep',
             'instructions' =>
                 '<p>
                     Doe het kipgehakt, lenteuitje, de gember, knoflook en een snuf peper in een kom.
@@ -359,6 +362,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $martijnH->id,
             'title' => 'Bonenpuree met paddenstoelensaus',
+            'slug' => 'bonenpuree-met-paddenstoelensaus',
             'instructions' =>
                 '<p>
                     Maak eerst de saus. Doe een flinke hoeveelheid olijfolie(+- 250 ml) in een pan op gemiddeld vuur. Doe hierna alle ingredienten afgezien van de paddestoelen in de pan en bak zachtjes 5 minuutjes tot het begint te geuren.
@@ -448,6 +452,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $jorik->id,
             'title' => 'wraps met kip',
+            'slug' => 'wraps-met-kip',
             'instructions' =>
                 '<p>
                     Bak de kip in gaar in de ketjap saus.
@@ -513,6 +518,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $simoneP->id,
             'title' => 'Plaatgroenten met *',
+            'slug' => 'plaatgroenten-met-*',
             'instructions' =>
                 '<p>
                     Stap 1: Kies 3 of 4 van je favoriete groenten.
@@ -583,6 +589,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $ilseB->id,
             'title' => 'Kip met naanbrood, hummus en mangosalsa',
+            'slug' => 'kip-met-naanbrood-hummus-en-mangosalsa',
             'instructions' =>
                 '<p>
 
@@ -673,6 +680,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $pascal->id,
             'title' => 'Nacho\'s met groenten en kaas',
+            'slug' => 'nachos-met-groenten-en-kaas',
             'instructions' =>
                 '<p>
                     Snijd en kruid de kipfilet
@@ -780,6 +788,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $casper->id,
             'title' => 'Hartige taart met spinazie en feta',
+            'slug' => 'hartige-taart-met-spinazie-en-feta',
             'instructions' =>
                 '<p>
                     Verder benodigd:
@@ -885,6 +894,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $geranda->id,
             'title' => 'Gnocchi met doperwtenpesto en burrata',
+            'slug' => 'gnocchi-met-doperwtenpesto-en-burrata',
             'instructions' =>
                 '<p>
                     Breng een ruime pan met gezouten water aan de kook. Kook hierin de doperwten 2 minuten zodat ze net gaar zijn.
@@ -956,6 +966,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $annemieke->id,
             'title' => 'Spinazietaart met feta',
+            'slug' => 'spinazietaart-met-feta',
             'instructions' =>
                 '<p>
                     Pel en snipper de ui en hak de knoflook fijn. Fruit dit aan in iets olijfolie. Voeg beetje bij beetje de spinazie toe. Totdat deze volledig geslonken is. Breng de spinazie op smaak met peper en zout. Druk het meeste vocht eruit.
@@ -1055,6 +1066,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $jordy->id,
             'title' => 'Sushibowl met zalmsnippers en gembermayonaise',
+            'slug' => 'sushibowl-met-zalmsnippers-en-gembermayonaise',
             'instructions' =>
                 '<p>
                      Breng ruim water aan de kook in een pan met deksel voor de rijst en verkruimel er 1/4 bouillonblokje per persoon boven.Verwijder ondertussen het loof van de radijsjes en snijd ze in kwarten. Snijd de komkommer in kleine blokjes.
@@ -1165,6 +1177,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $quinn->id,
             'title' => 'Japanse golden curry',
+            'slug' => 'japanse-golden-curry',
             'instructions' =>
                 '<p>
                     Bereid de rijst zoals je gewend bent.
@@ -1237,6 +1250,7 @@ class DatabaseSeeder extends Seeder
         $recipe = Recipe::create([
             'user_id' => $paulD->id,
             'title' => 'Chili sin carne',
+            'slug' => 'chili-sin-carne',
             'instructions' =>
                 '<p>
                     1. Bak je Jalapeño burgers volgens de verpakking. Haal deze uit de pan en snijd ze vervolgens in kleine stukken. Indien je ongekruide vleesvervangers gebruikt, breng ze een beetje op smaak met wat zout en zwarte peper. Zet het ‘vlees’ apart voor later.
