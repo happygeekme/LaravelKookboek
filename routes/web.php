@@ -20,9 +20,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('recipes/{recipe:title}', function (Recipe $recipe) {
+Route::get('recipes/{recipe:slug}', function (Recipe $recipe) {
     return view('recipe', [
         'recipe' => $recipe,
-        'ingredients' => $recipe->ingredients
+        'ingredients' => $recipe->ingredients,
+        'user' => $recipe->user
     ]);
 });
