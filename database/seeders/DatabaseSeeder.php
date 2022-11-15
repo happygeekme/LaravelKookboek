@@ -7,6 +7,9 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Recipe;
 use App\Models\Ingredient;
+use App\Models\Measurement;
+use App\Models\Ingredientrecipe;
+use Illuminate\Validation\Rules\In;
 
 class DatabaseSeeder extends Seeder
 {
@@ -75,9 +78,496 @@ class DatabaseSeeder extends Seeder
             'name' => 'Paul D'
         ]);
 
+//MEASUREMENTS
+        $kuipje = Measurement::create([
+            'name' => 'kuipje'
+        ]);
+
+        $gram = Measurement::create([
+            'name' => 'gram'
+        ]);
+
+        $ml = Measurement::create([
+            'name' => 'ml'
+        ]);
+
+        $cm = Measurement::create([
+            'name' => 'cm'
+        ]);
+
+        $theelepel = Measurement::create([
+            'name' => 'theelepel(s)'
+        ]);
+
+        $eetlepel = Measurement::create([
+            'name' => 'eetlepel(s)'
+        ]);
+
+        $teentjes = Measurement::create([
+            'name' => 'teentje(s)'
+        ]);
+
+        $takjes = Measurement::create([
+            'name' => 'takje(s)'
+        ]);
+
+        $handje = Measurement::create([
+            'name' => 'handje(s)'
+        ]);
+
+        $bakje = Measurement::create([
+            'name' => 'bakje'
+        ]);
+
+        $vellen = Measurement::create([
+            'name' => 'vel(len)'
+        ]);
+
+        $bos = Measurement::create([
+            'name' => 'bos(sen)'
+        ]);
+
+        $blokje = Measurement::create([
+            'name' => 'blokje'
+        ]);
+
+        $pakje = Measurement::create([
+            'name' => 'pakje'
+         ]);
+
+        $pot = Measurement::create([
+            'name' => 'pot(ten)'
+        ]);
+
+        $blikje = Measurement::create([
+            'name' => 'blikje(s)'
+        ]);
+
+        $blik = Measurement::create([
+            'name' => 'blik(ken)'
+        ]);
+
+//INGREDIENTS
+        $kipfilet = Ingredient::create([
+            'name' => 'kipfilet',
+        ]);
+
+        $cajunkruiden = Ingredient::create([
+            'name' => 'cajunkruiden',
+        ]);
+
+        $penne = Ingredient::create([
+            'name' => 'penne',
+        ]);
+
+        $kruidenkaas = Ingredient::create([
+            'name' => 'kruidenkaas',
+        ]);
+
+        $spinazie = Ingredient::create([
+            'name' => 'spinazie'
+        ]);
+
+        $pijnboompitten = Ingredient::create([
+            'name' => 'pijnboompitjes',
+        ]);
+
+        $pasta = Ingredient::create([
+            'name' => 'Pasta'
+        ]);
+
+        $uien = Ingredient::create([
+            'name' => 'ui(en)',
+        ]);
+
+        $knoflook = Ingredient::create([
+            'name' => 'knoflook',
+        ]);
+
+        $walnoten = Ingredient::create([
+            'name' => 'walnoten',
+        ]);
+
+        $mascarpone = Ingredient::create([
+            'name' => 'mascarpone',
+        ]);
+
+        $basilicum = Ingredient::create([
+            'name' => 'basilicum',
+        ]);
+
+        $kaas = Ingredient::create([
+            'name' => 'kaas',
+        ]);
+
+        $olijfolie = Ingredient::create([
+            'name' => 'olijfolie',
+        ]);
+
+        $peper = Ingredient::create([
+            'name' => 'peper'
+        ]);
+
+        $zout = Ingredient::create([
+            'name' => 'zout'
+        ]);
+
+        $kipgehakt = Ingredient::create([
+            'name' => 'kipgehakt',
+        ]);
+
+        $lenteui = Ingredient::create([
+            'name' => 'lenteui(tjes)',
+        ]);
+
+        $paksoi = Ingredient::create([
+            'name' => 'paksoi',
+        ]);
+
+        $rodeCurryPasta = Ingredient::create([
+            'name' => 'rode curry pasta',
+        ]);
+
+        $gember = Ingredient::create([
+            'name' => 'gember'
+        ]);
+
+        $kokosmelk = Ingredient::create([
+            'name' => 'kokosmelk'
+        ]);
+
+        $kippenbouillon = Ingredient::create([
+            'name' => 'kippenbouillon'
+        ]);
+
+        $groentenbouillon = Ingredient::create([
+            'name' => 'groetenbouillon'
+        ]);
+
+        $vissaus = Ingredient::create([
+            'name' => 'vissaus'
+        ]);
+
+        $honing = Ingredient::create([
+            'name' => 'honing'
+        ]);
+
+        $noedels = Ingredient::create([
+            'name' => 'noedels'
+        ]);
+
+        $koriander = Ingredient::create([
+            'name' => 'koriander'
+        ]);
+
+        $portobellos = Ingredient::create([
+            'name' => 'portobello\'s'
+        ]);
+
+        $kastanjeChampignons = Ingredient::create([
+            'name' => 'kastanje champignons'
+        ]);
+
+        $chilivlokken = Ingredient::create([
+            'name' => 'chilivlokken'
+        ]);
+
+        $komijnzaad = Ingredient::create([
+            'name' => 'komijnzaad'
+        ]);
+
+        $korianderzaad = Ingredient::create([
+            'name' => 'korianderzaad'
+        ]);
+
+        $tomatenpuree = Ingredient::create([
+            'name' => 'tomatenpuree'
+        ]);
+
+        $limaBonen = Ingredient::create([
+            'name' => 'limabonen'
+        ]);
+
+        $citroensap = Ingredient::create([
+            'name' => 'citroensap'
+        ]);
+
+        $wraps = Ingredient::create([
+            'name' => 'wraps'
+        ]);
+
+        $ketjap = Ingredient::create([
+            'name' => 'ketjap'
+        ]);
+
+        $sojasaus = Ingredient::create([
+            'name' => 'sojasaus'
+        ]);
+
+        $komkommer = Ingredient::create([
+            'name' => 'komkommer'
+        ]);
+
+        $ijsbergsla = Ingredient::create([
+            'name' => 'ijsbergsla'
+        ]);
+
+        $tomaat = Ingredient::create([
+            'name' => 'toma(a)t(en)'
+        ]);
+
+        $hummus = Ingredient::create([
+            'name' => 'hummus'
+        ]);
+
+        $mais = Ingredient::create([
+            'name' => 'mais'
+        ]);
+
+        $paprika = Ingredient::create([
+            'name' => 'paprika(s)'
+        ]);
+
+        $aardappels = Ingredient::create([
+            'name' => 'aardappel(s)'
+        ]);
+
+        $courgette = Ingredient::create([
+            'name' => 'courgette'
+        ]);
+
+        $aubergine = Ingredient::create([
+           'name' => 'aubergine(s)'
+        ]);
+
+        $wortel = Ingredient::create([
+            'name' => 'wortel(s)'
+        ]);
+
+        $feta = Ingredient::create([
+            'name' => 'feta'
+        ]);
+
+        $haloumi = Ingredient::create([
+            'name' => 'haloumi'
+        ]);
+
+        $tofu = Ingredient::create([
+            'name' => 'tofu'
+        ]);
+
+        $salami = Ingredient::create([
+            'name' => 'salami'
+        ]);
+
+        $ham = Ingredient::create([
+            'name' => 'ham'
+        ]);
+
+        $italiaanseKruiden = Ingredient::create([
+            'name' => 'italiaanse kruiden'
+        ]);
+
+        $yoghurt = Ingredient::create([
+            'name' => 'yoghurt'
+        ]);
+
+        $beschuit = Ingredient::create([
+            'name' => 'beschuit(en)'
+        ]);
+
+        $ei = Ingredient::create([
+            'name' => 'ei(eren)'
+        ]);
+
+        $naanbrood = Ingredient::create([
+            'name' => 'naanbrood'
+        ]);
+
+        $rodePeper = Ingredient::create([
+            'name' => 'rode peper'
+        ]);
+
+        $mango = Ingredient::create([
+            'name' => 'mango'
+        ]);
+
+        $rucola = Ingredient::create([
+            'name' => 'rucola'
+        ]);
+
+        $cherryTomaatjes = Ingredient::create([
+            'name' => 'cherrytomaatjes'
+        ]);
+
+        $nachoChips = Ingredient::create([
+            'name' => 'nacho chips'
+        ]);
+
+        $vlees = Ingredient::create([
+            'name' => 'vlees'
+        ]);
+
+        $prei = Ingredient::create([
+            'name' => 'prei'
+        ]);
+
+        $cremeFraiche = Ingredient::create([
+            'name' =>  'creme fraiche'
+        ]);
+
+        $oregano = Ingredient::create([
+            'name' => 'oregano'
+        ]);
+
+        $komijn = Ingredient::create([
+            'name' => 'komijn'
+        ]);
+
+        $citroen = Ingredient::create([
+            'name' => 'citroen(en)'
+        ]);
+
+        $cashewnoten = Ingredient::create([
+            'name' => 'cashewnoten'
+        ]);
+
+        $zalm = Ingredient::create([
+            'name' => 'zalm'
+        ]);
+
+        $bladerdeeg = Ingredient::create([
+            'name' => 'bladerdeeg'
+        ]);
+
+        $doperwten = Ingredient::create([
+            'name' => 'doperwten'
+        ]);
+
+        $pesto = Ingredient::create([
+            'name' => 'pesto'
+        ]);
+
+        $citroenrasp = Ingredient::create([
+            'name' => 'citroen rasp'
+        ]);
+
+        $gnocchi = Ingredient::create([
+            'name' => 'gnochhi'
+        ]);
+
+        $burratini = Ingredient::create([
+            'name' => 'burratini'
+        ]);
+
+        $filodeeg = Ingredient::create([
+            'name' => 'filodeeg'
+        ]);
+
+        $kwark = Ingredient::create([
+            'name' => 'kwark'
+        ]);
+
+        $peterselie = Ingredient::create([
+        'name' => 'peterselie'
+        ]);
+
+        $dille = Ingredient::create([
+            'name' => 'dille'
+        ]);
+
+        $sesamzaad = Ingredient::create([
+            'name' => 'sesamzaad'
+        ]);
+
+        $radijs = Ingredient::create([
+        'name' => 'radijs'
+        ]);
+
+        $risottorijst = Ingredient::create([
+            'name' => 'risottorijst'
+        ]);
+
+        $zalmsnippers = Ingredient::create([
+            'name' => 'zalmsnippers'
+        ]);
+
+        $avocado = Ingredient::create([
+            'name' => 'avocado'
+        ]);
+
+        $mayonaise = Ingredient::create([
+            'name' => 'mayonaise'
+        ]);
+
+        $wittewijnazijn = Ingredient::create([
+            'name' => 'wittewijnazijn'
+        ]);
+
+        $suiker = Ingredient::create([
+            'name' => 'suiker'
+        ]);
+
+        $gomasio = Ingredient::create([
+            'name' => 'gomasio'
+        ]);
+
+        $goldenCurryMix = Ingredient::create([
+            'name' => 'golden curry mix'
+        ]);
+
+        $water = Ingredient::create([
+            'name' => 'water'
+        ]);
+
+        $kippendijfilet = Ingredient::create([
+            'name' => 'kippendijfilet'
+        ]);
+
+        $rijst = Ingredient::create([
+            'name' => 'rijst'
+        ]);
+
+        $olie = Ingredient::create([
+            'name' => 'olie'
+        ]);
+
+        $jalapenoBurgers = Ingredient::create([
+            'name' => 'jalapeno burgers'
+        ]);
+
+        $bruineBonen = Ingredient::create([
+            'name' => 'bruine bonen'
+        ]);
+
+        $kidneyBonen = Ingredient::create([
+            'name' => 'kidney bonen'
+        ]);
+
+        $kapucijners = Ingredient::create([
+            'name' => 'kapucijners'
+        ]);
+
+        $chipotleSaus = Ingredient::create([
+            'name' => 'chipotle saus'
+        ]);
+
+        $paprikaPoeder = Ingredient::create([
+            'name' => 'paprika poeder'
+        ]);
+
+        $gepeldeTomaten = Ingredient::create([
+            'name' => 'gepelde tomaten'
+        ]);
+
+        $pompoenpitten = Ingredient::create([
+            'name' => 'pompoenpitten'
+        ]);
+
         $recipe = Recipe::create([
             'user_id' => $luuk->id,
             'title' => 'Pasta met kipfilet en kruidenkaas',
+            'slug' => 'pasta-met-kipfilet-en-kruidenkaas',
             'instructions' =>
                  '<p>Snijd de kipfilet in stukjes en kruid deze met cajunkruiden.
                     Ontdooi de spinazie op laag vuur in een steelpannetje en kook
@@ -91,43 +581,39 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/pastaKipfiletKruidenkaas.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'kipfilet',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kipfilet->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'cajunkruiden',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $cajunkruiden->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'penne',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $penne->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'kruidenkaas',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'kuipje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kruidenkaas->id,
+            'measurement_id' => $kuipje->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'spinazie (niet a la creme)',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $spinazie->id,
+            'note_user' => 'Geen a la creme'
         ]);
 
-        Ingredient::create([
-            'name' => 'pijnboompitjes',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $pijnboompitten->id,
         ]);
+
 
         $recipe = Recipe::create([
             'user_id' => $manon->id,
             'title' => 'Pasta met spinazie roomsaus',
+            'slug' => 'pasta-met-spinazie_roomsaus',
             'instructions' =>
                     '<p>
                     1. Kook de pasta volgens de gebruiksaanwijzing op de verpakking.
@@ -156,83 +642,68 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/pastaSpinazieRoomsaus.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'Pasta (of ravioli of iets anders wat je lekker vindt)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 500
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $pasta->id,
+            'measurement_id' => $gram->id,
+            'amount' => 500,
+            'note_user' => 'Of ravioli of iets anders at je lekker vindt'
         ]);
 
-        Ingredient::create([
-            'name' => 'spinazie',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $spinazie->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'penne',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 800
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'uien',
-            'recipe_id' => $recipe->id,
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'measurement_id' => $teentjes->id,
+            'amount' => 2
         ]);
 
-        Ingredient::create([
-            'name' => 'knoflook',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'teentjes',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $walnoten->id,
+            'measurement_id' => $gram->id,
+            'amount' => 30
         ]);
 
-        Ingredient::create([
-            'name' => 'walnoten',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 30
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $mascarpone->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 4,
         ]);
 
-        Ingredient::create([
-            'name' => 'mascarpone',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepels',
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $basilicum->id,
+            'measurement_id' => $takjes->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'basilicum',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'takjes',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kaas->id,
+            'note_user' => 'geraspt, naar smaak'
         ]);
 
-        Ingredient::create([
-            'name' => 'geraspte kaas',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'naar smaak',
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olijfolie->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'olijfolie',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $peper->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'peper',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zout->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'zout',
-            'recipe_id' => $recipe->id,
-        ]);
 
         $recipe = Recipe::create([
             'user_id' => $jitske->id,
             'title' => 'Khao Soi Noedelsoep',
+            'slug' => 'khao-soi-noedelsoep',
             'instructions' =>
                 '<p>
                     Doe het kipgehakt, lenteuitje, de gember, knoflook en een snuf peper in een kom.
@@ -254,111 +725,100 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/khaoSoiNoedelsoep.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'kipgehakt',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 250
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kipgehakt->id,
+            'measurement_id' => $gram->id,
+            'amount' => 250,
         ]);
 
-        Ingredient::create([
-            'name' => 'lenteui of bosui, fijngehakt',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $lenteui->id,
+            'amount' => 1,
+            'note_user' => 'of bosui, fijngehakt'
         ]);
 
-        Ingredient::create([
-            'name' => 'gember vers, geraspt',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'cm',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $gember->id,
+            'measurement_id' => $cm->id,
+            'amount' => 1,
+            'note_user' => 'vers, geraspt'
         ]);
 
-        Ingredient::create([
-            'name' => 'knoflook, fijngehakt',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'teen',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'measurement_id' => $teentjes->id,
+            'amount' => 1,
+            'note_user' => 'fijngehakt'
         ]);
 
-        Ingredient::create([
-            'name' => 'zwarte peper',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $peper->id,
+            'note_user' => 'zwart'
         ]);
 
-        Ingredient::create([
-            'name' => 'olijfolie',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olijfolie->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'penne',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 800
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $paksoi->id,
+            'amount' => 1,
+            'note_user' => 'gesneden'
         ]);
 
-        Ingredient::create([
-            'name' => 'paksoi, gesneden',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $rodeCurryPasta->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1.5,
+            'note_user' => 'bij Amazing Oriental hebben ze hele lekkere!'
         ]);
 
-        Ingredient::create([
-            'name' => 'rode curry pasta (bij Amazing Oriental hebben ze hele lekkere!)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kokosmelk->id,
+            'measurement_id' => $ml->id,
+            'amount' => 200,
+            'note_user' => 'klein pakje'
         ]);
 
-        Ingredient::create([
-            'name' => 'kokosmelk (klein pakje)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'ml',
-            'quantity' => 200
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kippenbouillon->id,
+            'measurement_id' => $ml->id,
+            'amount' => 250,
         ]);
 
-        Ingredient::create([
-            'name' => 'kippenbouillon',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'ml',
-            'quantity' => 250
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $vissaus->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'vissaus',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $honing->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'honing',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepel',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $noedels->id,
+            'measurement_id' => $gram->id,
+            'amount' => 75,
         ]);
 
-        Ingredient::create([
-            'name' => 'rijsnoedels',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 75
-        ]);
-
-        Ingredient::create([
-            'name' => 'korianderblaadjes vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'handje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $koriander->id,
+            'measurement_id' => $handje->id,
+            'amount' => 1,
+            'note_user' => 'vers, de blaadjes'
         ]);
 
 
         $recipe = Recipe::create([
             'user_id' => $martijnH->id,
             'title' => 'Bonenpuree met paddenstoelensaus',
+            'slug' => 'bonenpuree-met-paddenstoelensaus',
             'instructions' =>
                 '<p>
                     Maak eerst de saus. Doe een flinke hoeveelheid olijfolie(+- 250 ml) in een pan op gemiddeld vuur. Doe hierna alle ingredienten afgezien van de paddestoelen in de pan en bak zachtjes 5 minuutjes tot het begint te geuren.
@@ -373,81 +833,84 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/bonenpureeMetPaddenstoelensaus.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'Portobello\'s en/of kastanjechampignons',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gr',
-            'quantity' => 650
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $portobellos->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'knoflook fijngehakt',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'tenen',
-            'quantity' => 5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kastanjeChampignons->id,
+            'measurement_id' => $gram->id,
+            'amount' => 650,
+            'note_user' => 'Kan je weglaten als je 4 portobello\'s gebruikt'
         ]);
 
-        Ingredient::create([
-            'name' => 'ui, gesnipperd',
-            'recipe_id' => $recipe->id,
-            'quantity' =>1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'measurement_id' => $teentjes->id,
+            'amount' => 5,
+            'note_user' => 'fijngehakt'
         ]);
 
-        Ingredient::create([
-            'name' => 'chilivlokken',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+            'amount' => 1,
+            'note_user' => 'gesnipperd'
         ]);
 
-        Ingredient::create([
-            'name' => 'komijnzaad, gekneusd in een vijzel',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepels',
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $chilivlokken->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1.5,
         ]);
 
-        Ingredient::create([
-            'name' => 'korianderzaad, gekneusd in een vijzel',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $komijnzaad->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 4,
+            'note_user' => 'gekneusd in een vijzel'
         ]);
 
-        Ingredient::create([
-            'name' => 'tomatenpuree',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepels',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $korianderzaad->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1,
+            'note_user' => 'gekneusd in een vijzel'
         ]);
 
-        Ingredient::create([
-            'name' => 'olijfolie',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $tomatenpuree->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 2
         ]);
 
-        Ingredient::create([
-            'name' => 'limabonen of of mix met cannellinibonen',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 700
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olijfolie->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'citroensap',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' =>1.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $limaBonen->id,
+            'measurement_id' => $gram->id,
+            'amount' => 700,
+            'note_user' => 'of mix met cannellinibonen'
         ]);
 
-        Ingredient::create([
-            'name' => 'zeezout',
-            'recipe_id' => $recipe->id,
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $citroensap->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1.5,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zout->id,
+            'note_user' => 'zeezout'
         ]);
 
         $recipe = Recipe::create([
             'user_id' => $jorik->id,
             'title' => 'wraps met kip',
+            'slug' => 'wraps-met-kip',
             'instructions' =>
                 '<p>
                     Bak de kip in gaar in de ketjap saus.
@@ -463,86 +926,66 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/wrapsMetKip.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'wraps naar keuze',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $wraps->id,
+            'note_user' => 'naar keuze'
         ]);
 
-        Ingredient::create([
-            'name' => 'kipblokjes',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 500
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kipfilet->id,
+            'measurement_id' => $gram->id,
+            'amount' => 500,
+            'note_user' => 'in blokjes'
         ]);
 
-        Ingredient::create([
-            'name' => 'ketjap saus',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $ketjap->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'komkommer',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $komkommer->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'ijsbergsla',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $ijsbergsla->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'tomaat',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $tomaat->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'hummus (zongedroogde tomaat of naar keuze)',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $hummus->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'mais',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $mais->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'kaas, geraspt',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kaas->id,
+            'note_user' => 'geraspt'
         ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $yoghurt->id,
+            'note_user' => 'Griekse of Turkse'
+        ]);
+
 
         $recipe = Recipe::create([
             'user_id' => $simoneP->id,
             'title' => 'Plaatgroenten met *',
+            'slug' => 'plaatgroenten-met-*',
             'instructions' =>
                 '<p>
                     Stap 1: Kies 3 of 4 van je favoriete groenten.
-                    Stap 1: Kies 3 of 4 van je favoriete groenten.
-                    Bijvoorbeeld:
-                    Aardappelen (piepers, krieltjes, kruimelig, zoet maakt allemaal niet uit)
-                    Paprika (Alle kleuren mogen, 2 of 3 ook, punt paprika, whatever)
-                    Courgette
-                    Aubergine
-                    Tomaat
-                    Ui
-                    Wortels (ook alle kleuren mogen)
 
                     & kies * = Iets extra’s naar keuze.
-                    Bijvoorbeeld:
-                    Feta
-                    Haloumi
-                    Tofu
-                    Salami
-                    Hamblokjes
-                    Kipreepjes
 
-                    Ook nodig:
-                    1 a 2 tenen knoflook (meer mag ook, maar graag dan thuis werken dan de dag erna)
-                    4 eetl (olijf)olie
-                    Kruiden die je hebt, italiaanse kruiden mix bijvoorbeeld
 
                     De hoeveelheid groente en extra’s kun je zelf inschatten hoeveel je op kan.
 
-                    Bereiden
                     Alle groenten snijden in stukken van ongeveer 2cm
                     De * snijden
                     Knoflook in de knoflookpers of klein snijden
@@ -569,20 +1012,77 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/plaatgroentenMet.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'favoriete groenten naar keuze',
-            'recipe_id' => $recipe->id,
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $aardappels->id,
+            'note_user' => 'piepers, krieltjes, kruimelig, zoet maakt allemaal niet uit'
         ]);
 
-        Ingredient::create([
-            'name' => 'Iets extra\'s naar keuze',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $paprika->id,
+            'note_user' => 'Alle kleuren mogen, 2 of 3 ook, punt paprika, whatever'
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $courgette->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $aubergine->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $tomaat->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $wortel->id,
+            'note_user' => 'ook alle kleuren mogen'
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $feta->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $haloumi->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $tofu->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $salami->id,
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $ham->id,
+            'note_user' => 'blokjes'
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kipfilet->id,
+            'note_user' => 'reepjes'
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'note_user' => '1 a 2 tenen (meer mag ook, maar graag dan thuis werken dan de dag erna)'
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $italiaanseKruiden->id,
+            'note_user' => 'Of kruiden die je hebt'
         ]);
 
         $recipe = Recipe::create([
             'user_id' => $ilseB->id,
             'title' => 'Kip met naanbrood, hummus en mangosalsa',
+            'slug' => 'kip-met-naanbrood-hummus-en-mangosalsa',
             'instructions' =>
                 '<p>
 
@@ -606,73 +1106,85 @@ class DatabaseSeeder extends Seeder
             'link' => 'https://www.ah.nl/allerhande/recept/R-R549840/kip-met-hummus-naanbrood-en-mangosalsa'
         ]);
 
-        Ingredient::create([
-            'name' => 'kipfilets',
-            'recipe_id' => $recipe->id,
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kipfilet->id,
+            'amount' => 4,
         ]);
 
-        Ingredient::create([
-            'name' => 'beschuiten',
-            'recipe_id' => $recipe->id,
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $beschuit->id,
+            'amount' => 2
         ]);
 
-        Ingredient::create([
-            'name' => 'eieren',
-            'recipe_id' => $recipe->id,
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $ei->id,
+            'amount' => 2,
+            'note_user' => 'middelgrote'
         ]);
 
-        Ingredient::create([
-            'name' => 'olijfolie',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepels',
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olijfolie->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 4
         ]);
 
-        Ingredient::create([
-            'name' => 'naanbroden',
-            'recipe_id' => $recipe->id,
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $naanbrood->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'rode peper',
-            'recipe_id' => $recipe->id,
-            'quantity' => 0.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $rodePeper->id,
+            'amount' => 0.5,
         ]);
 
-        Ingredient::create([
-            'name' => 'mango, eetrijp',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $mango->id,
+            'amount' => 1,
+            'note_user' => 'eetrijp'
         ]);
 
-        Ingredient::create([
-            'name' => 'rucola',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 75
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $koriander->id,
+            'measurement_id' => $gram->id,
+            'amount' => 15,
+            'note_user' => 'vers'
         ]);
 
-        Ingredient::create([
-            'name' => 'koriander, vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 15
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $hummus->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 6
         ]);
 
-        Ingredient::create([
-            'name' => 'hummus',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepels',
-            'quantity' => 6
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $rucola->id,
+            'measurement_id' => $gram->id,
+            'amount' => 75
         ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $cherryTomaatjes->id,
+            'measurement_id' => $bakje->id,
+            'amount' => 1
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $komkommer->id,
+            'amount' => 0.5
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $paprika->id,
+            'amount' => 1,
+            'note_user' => 'rood'
+        ]);
+
 
         $recipe = Recipe::create([
             'user_id' => $pascal->id,
             'title' => 'Nacho\'s met groenten en kaas',
+            'slug' => 'nachos-met-groenten-en-kaas',
             'instructions' =>
                 '<p>
                     Snijd en kruid de kipfilet
@@ -696,90 +1208,83 @@ class DatabaseSeeder extends Seeder
             'link' => 'http://recepten.lindascal.nl/nachos-met-groenten-een-kaas/'
         ]);
 
-        Ingredient::create([
-            'name' => 'nacho chips',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 200
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $nachoChips->id,
+            'measurement_id' => $gram->id,
+            'amount' => 200,
         ]);
 
-        Ingredient::create([
-            'name' => 'vlees',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' =>200
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $vlees->id,
+            'measurement_id' => $gram->id,
+            'amount' => 200,
         ]);
 
-        Ingredient::create([
-            'name' => 'ui',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'knoflook',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'tenen',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'measurement_id' => $teentjes->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'paprika, rood',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $paprika->id,
+            'amount' => 1,
+            'note_user' => 'rood'
         ]);
 
-        Ingredient::create([
-            'name' => 'paprika, geel of groen',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $paprika->id,
+            'amount' => 1,
+            'note_user' => 'geel of groen'
         ]);
 
-        Ingredient::create([
-            'name' => 'prei',
-            'recipe_id' => $recipe->id,
-            'quantity' => 0.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $prei->id,
+            'amount' => 0.5
         ]);
 
-        Ingredient::create([
-            'name' => 'tomaat',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 100
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $tomaat->id,
+            'measurement_id' => $gram->id,
+            'amount' => 100,
+            'note_user' => 'rood'
         ]);
 
-        Ingredient::create([
-            'name' => 'kaas, geraspt of cheddar',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 100
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $cremeFraiche->id,
+            'measurement_id' => $ml->id,
+            'amount' => 50
         ]);
 
-        Ingredient::create([
-            'name' => 'oregano',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepels',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kaas->id,
+            'measurement_id' => $gram->id,
+            'amount' => 100,
+            'note_user' => 'geraspt of cheddar'
         ]);
 
-        Ingredient::create([
-            'name' => 'komijn',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepels',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $oregano->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 2
         ]);
 
-        Ingredient::create([
-            'name' => 'creme fraiche',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'ml',
-            'quantity' => 50
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $komijn->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 2
         ]);
 
 
         $recipe = Recipe::create([
             'user_id' => $casper->id,
             'title' => 'Hartige taart met spinazie en feta',
+            'slug' => 'hartige-taart-met-spinazie-en-feta',
             'instructions' =>
                 '<p>
                     Verder benodigd:
@@ -808,83 +1313,70 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/hartigeTaartMetSpinazieEnFeta.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'bladspinazie',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 600
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $spinazie->id,
+            'measurement_id' => $gram->id,
+            'amount' => 600,
+            'note_user' => 'blad spinazie'
         ]);
 
-        Ingredient::create([
-            'name' => 'feta',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 200
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $feta->id,
+            'measurement_id' => $gram->id,
+            'amount' => 200
         ]);
 
-        Ingredient::create([
-            'name' => 'eieren',
-            'recipe_id' => $recipe->id,
-            'quantity' => 6
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $ei->id,
+            'amount' => 6,
         ]);
 
-        Ingredient::create([
-            'name' => 'kaas, geraspt (bijvoorkeur oud)',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kaas->id,
+            'note_user' => 'geraspt, bij voorkeur oud'
         ]);
 
-        Ingredient::create([
-            'name' => 'citroen',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $citroen->id,
+            'amount' => 1
         ]);
 
-        Ingredient::create([
-            'name' => 'knoflook',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'tenen',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'measurement_id' => $teentjes->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'ui',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'peper',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $peper->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'zout',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zout->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'chili vlokken',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $chilivlokken->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'cashew noten',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zalm->id,
+            'note_user' => 'gerookt, OF panchetta'
         ]);
 
-        Ingredient::create([
-            'name' => 'zalm OF panchetta (optioneel)',
-            'recipe_id' => $recipe->id,
-        ]);
-
-        Ingredient::create([
-            'name' => 'bladerdeeg',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $bladerdeeg->id,
         ]);
 
         $recipe = Recipe::create([
             'user_id' => $geranda->id,
             'title' => 'Gnocchi met doperwtenpesto en burrata',
+            'slug' => 'gnocchi-met-doperwtenpesto-en-burrata',
             'instructions' =>
                 '<p>
                     Breng een ruime pan met gezouten water aan de kook. Kook hierin de doperwten 2 minuten zodat ze net gaar zijn.
@@ -898,64 +1390,64 @@ class DatabaseSeeder extends Seeder
             'link' => 'https://www.liselottelegebeke.nl/eten/vegetarische-gnocchi-doperwten-pesto-burrata/'
         ]);
 
-        Ingredient::create([
-            'name' => 'doperwten, vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 100
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $doperwten->id,
+            'measurement_id' => $gram->id,
+            'amount' => 100,
+            'note_user' => 'verse'
         ]);
 
-        Ingredient::create([
-            'name' => 'pesto, vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $pesto->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1.5,
+            'note_user' => 'verse'
         ]);
 
-        Ingredient::create([
-            'name' => 'citroensap',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepel',
-            'quantity' => 0.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $citroensap->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 0.5,
         ]);
 
-        Ingredient::create([
-            'name' => 'citroenrasp',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepel',
-            'quantity' => 0.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $citroenrasp->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 0.5,
         ]);
 
-        Ingredient::create([
-            'name' => 'gnocchi, vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 200
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $gnocchi->id,
+            'measurement_id' => $gram->id,
+            'amount' => 150,
+            'note_user' => 'verse (150 tot 200 gram)'
         ]);
 
-        Ingredient::create([
-            'name' => 'rucola',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'handje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $rucola->id,
+            'measurement_id' => $handje->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'burratini of 1/2 burrata, 30 minuten uit de koelkast',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $burratini->id,
+            'amount' => 1,
+            'note_user' => 'of 0.5 burrata, ten minste 30 minuten uit de koelkast'
         ]);
 
-        Ingredient::create([
-            'name' => 'olijfolie, extra vierge',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olijfolie->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1,
+            'note_user' => 'extra vierge'
         ]);
+
+
 
         $recipe = Recipe::create([
             'user_id' => $annemieke->id,
             'title' => 'Spinazietaart met feta',
+            'slug' => 'spinazietaart-met-feta',
             'instructions' =>
                 '<p>
                     Pel en snipper de ui en hak de knoflook fijn. Fruit dit aan in iets olijfolie. Voeg beetje bij beetje de spinazie toe. Totdat deze volledig geslonken is. Breng de spinazie op smaak met peper en zout. Druk het meeste vocht eruit.
@@ -969,92 +1461,83 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/spinazietaartMetFeta.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'filodeeg',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'grote vellen',
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $filodeeg->id,
+            'measurement_id' => $vellen->id,
+            'amount' => 4,
+            'note_user' => 'groot'
         ]);
 
-        Ingredient::create([
-            'name' => 'spinazie',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 600
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $spinazie->id,
+            'measurement_id' => $gram->id,
+            'amount' => 600,
         ]);
 
-        Ingredient::create([
-            'name' => 'ui',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'knoflook',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'tenen',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'measurement_id' => $teentjes->id,
+            'amount' => 2
         ]);
 
-        Ingredient::create([
-            'name' => 'eieren',
-            'recipe_id' => $recipe->id,
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $ei->id,
+            'amount' => 4,
         ]);
 
-        Ingredient::create([
-            'name' => 'kwark',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 125
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kwark->id,
+            'measurement_id' => $gram->id,
+            'amount' => 125,
         ]);
 
-        Ingredient::create([
-            'name' => 'feta',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 150
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $feta->id,
+            'measurement_id' => $gram->id,
+            'amount' => 150,
         ]);
 
-        Ingredient::create([
-            'name' => 'peterselie, vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 15
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $peterselie->id,
+            'measurement_id' => $gram->id,
+            'amount' => 15,
+            'note_user' => 'vers'
         ]);
 
-        Ingredient::create([
-            'name' => 'dille, vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'takjes',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $dille->id,
+            'measurement_id' => $takjes->id,
+            'amount' => 2,
+            'note_user' => 'vers'
         ]);
 
-        Ingredient::create([
-            'name' => 'sesamzaad',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepel',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $sesamzaad->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'peper',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $peper->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'zout',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zout->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'olijfolie',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olijfolie->id,
         ]);
 
         $recipe = Recipe::create([
             'user_id' => $jordy->id,
             'title' => 'Sushibowl met zalmsnippers en gembermayonaise',
+            'slug' => 'sushibowl-met-zalmsnippers-en-gembermayonaise',
             'instructions' =>
                 '<p>
                      Breng ruim water aan de kook in een pan met deksel voor de rijst en verkruimel er 1/4 bouillonblokje per persoon boven.Verwijder ondertussen het loof van de radijsjes en snijd ze in kwarten. Snijd de komkommer in kleine blokjes.
@@ -1070,101 +1553,89 @@ class DatabaseSeeder extends Seeder
             'link' => 'https://www.hellofresh.nl/recipes/sushibowl-met-zalmsnippers-en-gembermayonaise-5f4fadd6b1b7906d6244ff55'
         ]);
 
-        Ingredient::create([
-            'name' => 'radijs',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'bos',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $radijs->id,
+            'measurement_id' => $bos->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'risottorijs',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 150
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $risottorijst->id,
+            'measurement_id' => $gram->id,
+            'amount' => 150,
         ]);
 
-        Ingredient::create([
-            'name' => 'gember, vers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'cm',
-            'quantity' => 3
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $gember->id,
+            'measurement_id' => $cm->id,
+            'amount' => 3,
+            'note_user' => 'vers'
         ]);
 
-        Ingredient::create([
-            'name' => 'zalmsnippers',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 160
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zalmsnippers->id,
+            'measurement_id' => $gram->id,
+            'amount' => 160,
         ]);
 
-        Ingredient::create([
-            'name' => 'komkommer',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $sojasaus->id,
+            'measurement_id' => $ml->id,
+            'amount' => 20,
         ]);
 
-        Ingredient::create([
-            'name' => 'avocado',
-            'recipe_id' => $recipe->id,
-            'quantity' => 0.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $komkommer->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'mayonaise',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 50
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $avocado->id,
+            'amount' => 0.5,
         ]);
 
-        Ingredient::create([
-            'name' => 'sojasaus',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'ml',
-            'quantity' => 20
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $mayonaise->id,
+            'measurement_id' => $gram->id,
+            'amount' => 50,
         ]);
 
-        Ingredient::create([
-            'name' => 'gomasio',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $gomasio->id,
+            'measurement_id' => $gomasio->id,
+            'amount' => 5,
         ]);
 
-        Ingredient::create([
-            'name' => 'groentebouillonblokje',
-            'recipe_id' => $recipe->id,
-            'quantity' => 0.5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $groentenbouillon->id,
+            'measurement_id' => $blokje->id,
+            'amount' => 0.5,
         ]);
 
-        Ingredient::create([
-            'name' => 'suiker',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepels',
-            'quantity' => 3
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $suiker->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 3,
         ]);
 
-        Ingredient::create([
-            'name' => 'wittewijnazijn',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'eetlepels',
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $wittewijnazijn->id,
+            'measurement_id' => $eetlepel->id,
+            'amount' => 4,
         ]);
 
-        Ingredient::create([
-            'name' => 'peper',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $peper->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'zout',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zout->id,
         ]);
-
 
         $recipe = Recipe::create([
             'user_id' => $quinn->id,
             'title' => 'Japanse golden curry',
+            'slug' => 'japanse-golden-curry',
             'instructions' =>
                 '<p>
                     Bereid de rijst zoals je gewend bent.
@@ -1180,63 +1651,62 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/japanseGoldenCurry.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'Golden Curry Mix (https://amazingoriental.com/product/golden-curry-sausmix-mild-2/)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'pakje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $goldenCurryMix->id,
+            'measurement_id' => $pakje->id,
+            'amount' => 1,
+            'note_user' => 'https://amazingoriental.com/product/golden-curry-sausmix-mild-2/'
         ]);
 
-        Ingredient::create([
-            'name' => 'ui',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 350
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+            'measurement_id' => $gram->id,
+            'amount' => 350,
         ]);
 
-        Ingredient::create([
-            'name' => 'wortel',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 100
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $wortel->id,
+            'measurement_id' => $gram->id,
+            'amount' => 100,
         ]);
 
-        Ingredient::create([
-            'name' => 'aardappelen (niet kruimig)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 150
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $aardappels->id,
+            'measurement_id' => $gram->id,
+            'amount' => 150,
+            'note_user' => 'geen kruimige'
         ]);
 
-        Ingredient::create([
-            'name' => 'water',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'ml',
-            'quantity' => 500
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $water->id,
+            'measurement_id' => $ml->id,
+            'amount' => 500,
         ]);
 
-        Ingredient::create([
-            'name' => 'kippendijfilet',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'gram',
-            'quantity' => 400
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kippendijfilet->id,
+            'measurement_id' => $gram->id,
+            'amount' => 400,
         ]);
 
-        Ingredient::create([
-            'name' => 'rijst',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'personen',
-            'quantity' => 4
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $rijst->id,
+            'note_user' => 'voor 3 a 4 personen (liefst japanse short grain)'
         ]);
 
-        Ingredient::create([
-            'name' => 'olie om in te bakken (voorkeur groentenolie of pindaolie)',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olie->id,
+            'note_user' => 'om in te bakken (voorkeur voor groentenolie of pindaolie)'
         ]);
+
 
         $recipe = Recipe::create([
             'user_id' => $paulD->id,
             'title' => 'Chili sin carne',
+            'slug' => 'chili-sin-carne',
             'instructions' =>
                 '<p>
                     1. Bak je Jalapeño burgers volgens de verpakking. Haal deze uit de pan en snijd ze vervolgens in kleine stukken. Indien je ongekruide vleesvervangers gebruikt, breng ze een beetje op smaak met wat zout en zwarte peper. Zet het ‘vlees’ apart voor later.
@@ -1263,156 +1733,137 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/recipePics/chiliSinCarne.jpg'
         ]);
 
-        Ingredient::create([
-            'name' => 'Jalapeño burgers (van Garden Gourmet, AH)',
-            'recipe_id' => $recipe->id,
-            'quantity' => 4
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $jalapenoBurgers->id,
+            'amount' => 4,
+            'note_user' => 'van Garden Gourmet, AH'
         ]);
 
-        Ingredient::create([
-            'name' => 'Koriander naar smaak, eventueel als garnering',
-            'recipe_id' => $recipe->id,
+
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $koriander->id,
+            'note_user' => 'naar smaak, eventueel als garnering'
         ]);
 
-        Ingredient::create([
-            'name' => 'bruine bonen',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'pot',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $bruineBonen->id,
+            'measurement_id' => $pot->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'kidney bonen (niet in chilisaus)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'blik',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kidneyBonen->id,
+            'measurement_id' => $blik->id,
+            'amount' => 1,
+            'note_user' => 'niet in chilisaus'
         ]);
 
-        Ingredient::create([
-            'name' => 'mais',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'blikje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $mais->id,
+            'measurement_id' => $blikje->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'kapucijners',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'blikje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $kapucijners->id,
+            'measurement_id' => $blikje->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'prei',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $prei->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'uien, rood',
-            'recipe_id' => $recipe->id,
-            'quantity' => 3
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $uien->id,
+            'amount' => 3,
+            'note_user' => 'rood'
         ]);
 
-        Ingredient::create([
-            'name' => 'knoflook',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'tenen',
-            'quantity' => 5
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $knoflook->id,
+            'measurement_id' => $teentjes->id,
+            'amount' => 5,
         ]);
 
-        Ingredient::create([
-            'name' => 'rode peper, Habanero\'s zijn top',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $rodePeper->id,
+            'amount' => 1,
+            'note_user' => 'Habanero\'s zijn top'
         ]);
 
-        Ingredient::create([
-            'name' => 'chipotlé (saus)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepels',
-            'quantity' => 3
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $chipotleSaus->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 3,
         ]);
 
-        Ingredient::create([
-            'name' => 'oregano (Mexicaanse oregano geniet dde voorkeur, even naar de toko)',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepel',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $oregano->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 1,
+            'note_user' => 'Mexicaanse oregano geniet de voorkeur, even naar de Toko'
         ]);
 
-        Ingredient::create([
-            'name' => 'komijn',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepels',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $komijn->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'paprikapoeder',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'theelepels',
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $paprikaPoeder->id,
+            'measurement_id' => $theelepel->id,
+            'amount' => 2,
         ]);
 
-        Ingredient::create([
-            'name' => 'tomatenpuree',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'blikje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $tomatenpuree->id,
+            'measurement_id' => $blikje->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'gepelde tomaten',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'blik',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $gepeldeTomaten->id,
+            'measurement_id' => $blik->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'tomaten, vers',
-            'recipe_id' => $recipe->id,
-            'quantity' => 2
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $tomaat->id,
+            'amount' => 2,
+            'note_user' => 'vers'
         ]);
 
-        Ingredient::create([
-            'name' => 'paprika',
-            'recipe_id' => $recipe->id,
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $paprika->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'rijst (ik gebruik zelf bruine/volkoren rijst)',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $rijst->id,
+            'note_user' => 'ik gebruik zelf bruine/volkoren rijst'
         ]);
 
-        Ingredient::create([
-            'name' => 'pompoenpitten',
-            'recipe_id' => $recipe->id,
-            'measurement' => 'handje',
-            'quantity' => 1
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $pompoenpitten->id,
+            'measurement_id' => $handje->id,
+            'amount' => 1,
         ]);
 
-        Ingredient::create([
-            'name' => 'olie',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $peper->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'zout',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $zout->id,
         ]);
 
-        Ingredient::create([
-            'name' => 'peper',
-            'recipe_id' => $recipe->id,
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $olie->id,
         ]);
 
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

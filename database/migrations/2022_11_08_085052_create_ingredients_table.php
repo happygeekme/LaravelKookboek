@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('recipe_id');
-            $table->string('measurement')->nullable();
-            $table->float('quantity', places: 1)->nullable();
             $table->date('updated_at');
             $table->date('created_at');
         });
+
+
+
     }
 
     /**
