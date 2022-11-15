@@ -27,6 +27,9 @@ return new class extends Migration
             $table->string('link')->nullable();
 
         });
+
+
+
     }
 
     /**
