@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
-            $table->string('path_to_image')->nullable();
+            $table->string('image')->default('/images/userPics/defaultPic.png');
             $table->integer('auth_level')->default('0');
             $table->boolean('activated')->default(false);
             $table->rememberToken();
