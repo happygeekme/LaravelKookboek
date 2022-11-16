@@ -20,59 +20,73 @@ class DatabaseSeeder extends Seeder
         User::truncate();
 
         $luuk = User::create([
-            'name' => 'Luuk'
+            'name' => 'Luuk',
+            'image' => '/images/userPics/Luuk.jpg'
         ]);
 
         $manon = User::create([
-            'name' => 'Manon'
+            'name' => 'Manon',
+            'image' => '/images/userPics/Manon(1).jpg'
         ]);
 
         $jitske = User::create([
-            'name' => 'Jitske'
+            'name' => 'Jitske',
+            'image' => '/images/userPics/Jitske(1).jpg'
         ]);
 
         $martijnH = User::create([
-            'name' => 'Martijn H'
+            'name' => 'Martijn H',
+            'image' => '/images/userPics/Martijn.jpg'
         ]);
 
         $simoneP = User::create([
-            'name' => 'Simone P'
+            'name' => 'Simone P',
+            'image' => '/images/userPics/SimoneP2.jpg'
         ]);
 
         $jorik = User::create([
-            'name' => 'Jorik'
+            'name' => 'Jorik',
+            'image' => '/images/userPics/Jorik.jpg'
         ]);
 
         $ilseB = User::create([
-            'name' => 'Ilse B'
+            'name' => 'Ilse B',
+            'image' => '/images/userPics/IlseB2.jpg'
         ]);
 
         $pascal = User::create([
-            'name' => 'Pascal'
+            'name' => 'Pascal',
+            'image' => '/images/userPics/Pascal.jpg'
         ]);
 
         $casper = User::create([
-            'name' => 'Casper'
+            'name' => 'Casper',
+            'image' => '/images/userPics/CasperV.jpg'
         ]);
 
         $geranda = User::create([
-            'name' => 'Geranda'
+            'name' => 'Geranda',
+            'image' => '/images/userPics/Geranda.jpg'
         ]);
 
         $annemieke = User::create([
-            'name' => 'Annemieke'
+            'name' => 'Annemieke',
+            'image' => '/images/userPics/Annemieke.jpg'
         ]);
 
         $jordy = User::create([
-            'name' => 'Jordy'
+            'name' => 'Jordy',
+            'image' => '/images/userPics/JordyII.jpg'
         ]);
 
         $quinn = User::create([
-            'name' => 'Quinn'
+            'name' => 'Quinn',
+            'image' => '/images/userPics/Quinn(1).jpg'
         ]);
 
         $paulD = User::create([
-            'name' => 'Paul D'
+            'name' => 'Paul D',
+            'image' => '/images/userPics/Paul.jpg'
         ]);
 
         $recipe = Recipe::create([
