@@ -16,4 +16,9 @@ class Ingredient extends Model
             ->withPivot('measurement_id', 'amount', 'note_user')
             ->withTimestamps();
     }
+
+    public function measurement()
+    {
+        return $this->hasMany(Measurement::class);
+    }
 }

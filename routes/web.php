@@ -24,6 +24,6 @@ Route::get('recipes/{recipe:slug}', function (Recipe $recipe) {
     return view('recipe', [
         'recipe' => $recipe,
         'ingredients' => $recipe->ingredients,
-        'user' => $recipe->user
+        'user' => $recipe->user,
     ]);
 });
