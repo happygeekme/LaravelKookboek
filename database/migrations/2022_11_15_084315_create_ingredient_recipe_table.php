@@ -17,7 +17,7 @@ return new class extends Migration
 //            $table->id();
             $table->foreignId('recipe_id');
             $table->foreignId('ingredient_id');
-            $table->foreignId('measurement_id')->nullable();
+            $table->string('measurement')->nullable();
             $table->string('note_user')->nullable();
             $table->float('amount', places: 1)->nullable();
             $table->timestamps();

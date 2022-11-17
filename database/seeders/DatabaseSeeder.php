@@ -7,8 +7,6 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Recipe;
 use App\Models\Ingredient;
-use App\Models\Measurement;
-use App\Models\Ingredientrecipe;
 use Illuminate\Validation\Rules\In;
 
 class DatabaseSeeder extends Seeder
@@ -38,12 +36,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $martijnH = User::create([
-            'name' => 'Martijn H',
+            'name' => 'Martijn',
             'image' => '/images/userPics/Martijn.jpg'
         ]);
 
         $simoneP = User::create([
-            'name' => 'Simone P',
+            'name' => 'Simone',
             'image' => '/images/userPics/SimoneP2.jpg'
         ]);
 
@@ -53,7 +51,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $ilseB = User::create([
-            'name' => 'Ilse B',
+            'name' => 'Ilse',
             'image' => '/images/userPics/IlseB2.jpg'
         ]);
 
@@ -88,82 +86,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $paulD = User::create([
-            'name' => 'Paul D',
+            'name' => 'Paul',
             'image' => '/images/userPics/Paul.jpg'
         ]);
 
 //MEASUREMENTS
-        $kuipje = Measurement::create([
-            'name' => 'kuipje'
-        ]);
 
-        $gram = Measurement::create([
-            'name' => 'gram'
-        ]);
-
-        $ml = Measurement::create([
-            'name' => 'ml'
-        ]);
-
-        $cm = Measurement::create([
-            'name' => 'cm'
-        ]);
-
-        $theelepel = Measurement::create([
-            'name' => 'theelepel(s)'
-        ]);
-
-        $eetlepel = Measurement::create([
-            'name' => 'eetlepel(s)'
-        ]);
-
-        $teentjes = Measurement::create([
-            'name' => 'teentje(s)'
-        ]);
-
-        $takjes = Measurement::create([
-            'name' => 'takje(s)'
-        ]);
-
-        $handje = Measurement::create([
-            'name' => 'handje(s)'
-        ]);
-
-        $bakje = Measurement::create([
-            'name' => 'bakje'
-        ]);
-
-        $vellen = Measurement::create([
-            'name' => 'vel(len)'
-        ]);
-
-        $bos = Measurement::create([
-            'name' => 'bos(sen)'
-        ]);
-
-        $blokje = Measurement::create([
-            'name' => 'blokje'
-        ]);
-
-        $pakje = Measurement::create([
-            'name' => 'pakje'
-         ]);
-
-        $pot = Measurement::create([
-            'name' => 'pot(ten)'
-        ]);
-
-        $blikje = Measurement::create([
-            'name' => 'blikje(s)'
-        ]);
-
-        $blik = Measurement::create([
-            'name' => 'blik(ken)'
-        ]);
 
 //INGREDIENTS
         $kipfilet = Ingredient::create([
-            'name' => 'kipfilet',
+            'name' => 'kipfilet(s)',
         ]);
 
         $cajunkruiden = Ingredient::create([
@@ -231,7 +163,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $lenteui = Ingredient::create([
-            'name' => 'lenteui(tjes)',
+            'name' => 'lenteui(en)',
         ]);
 
         $paksoi = Ingredient::create([
@@ -395,15 +327,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $naanbrood = Ingredient::create([
-            'name' => 'naanbrood'
+            'name' => 'naanbro(o)d(en)'
         ]);
 
         $rodePeper = Ingredient::create([
-            'name' => 'rode peper'
+            'name' => 'rode peper(s)'
         ]);
 
         $mango = Ingredient::create([
-            'name' => 'mango'
+            'name' => 'mango(s)'
         ]);
 
         $rucola = Ingredient::create([
@@ -423,7 +355,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $prei = Ingredient::create([
-            'name' => 'prei'
+            'name' => 'prei(en)'
         ]);
 
         $cremeFraiche = Ingredient::create([
@@ -583,14 +515,21 @@ class DatabaseSeeder extends Seeder
             'title' => 'Pasta met kipfilet en kruidenkaas',
             'slug' => 'pasta-met-kipfilet-en-kruidenkaas',
             'instructions' =>
-                 '<p>Snijd de kipfilet in stukjes en kruid deze met cajunkruiden.
+                 '<p>
+                    Snijd de kipfilet in stukjes en kruid deze met cajunkruiden.
                     Ontdooi de spinazie op laag vuur in een steelpannetje en kook
-                    ondertussen de penne beetgaar. Bak de kipfilet bruin en als de
-                    spinazie ontdooit is, voeg dan het kuipje kruidenkaas toe en
-                    roer goed door elkaar heen. Als de kip gaar is, voeg het spinazie
+                    ondertussen de penne beetgaar.
+                 </p>
+                 <p>
+                    Bak de kipfilet bruin en als de spinazie ontdooit is, voeg dan het kuipje kruidenkaas toe en
+                    roer goed door elkaar heen.
+                 </p>
+                 <p>
+                    Als de kip gaar is, voeg het spinazie
                     mengsel toe, en daarna de penne. Rooster de pijnboompitjes. Serveer
-                    de pasta met wat pijnboompitjes er op.</P>',
-            'note' => 'Eet smakelijk! Super lekker en gezond!',
+                    de pasta met wat pijnboompitjes er op.
+                 </P>',
+            'note' => '<p>Eet smakelijk! Super lekker en gezond!</p>',
             'number_of_servings' => 2,
             'image' => '/images/recipePics/pastaKipfiletKruidenkaas.jpg'
         ]);
@@ -610,7 +549,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kruidenkaas->id,
-            'measurement_id' => $kuipje->id,
+            'measurement' => 'kuipje',
             'amount' => 1,
         ]);
 
@@ -630,26 +569,26 @@ class DatabaseSeeder extends Seeder
             'slug' => 'pasta-met-spinazie_roomsaus',
             'instructions' =>
                     '<p>
-                    1. Kook de pasta volgens de gebruiksaanwijzing op de verpakking.
-                    2. Ondertussen snij je de uien fijn en pers je de knoflook.
-                    3. Verhit de olijfolie (niet te heet) in de pan.
+                    1. Kook de pasta volgens de gebruiksaanwijzing op de verpakking.<br>
+                    2. Ondertussen snij je de uien fijn en pers je de knoflook.<br>
+                    3. Verhit de olijfolie (niet te heet) in de pan.<br>
                     4. Fruit de uien en de knoflook en schep de spinazie al omscheppend er in
                         gedeeltes bij. Als de spinazie is geslonken, schep je de mascarpone er
-                        doorheen. Breng op smaak met zout en peper.
-                    5. Pureer de saus met een staafmixer of blender mooi glad.
-                    6. Schep de pasta op de borden en verdeel de saus er overheen.
+                        doorheen. Breng op smaak met zout en peper.<br>
+                    5. Pureer de saus met een staafmixer of blender mooi glad.<br>
+                    6. Schep de pasta op de borden en verdeel de saus er overheen.<br>
                     7. Garneer met de walnoten en de basilicum en strooi er lekker veel geraspte
-                    (Parmezaanse) kaas overheen.
+                    (Parmezaanse) kaas overheen.<br>
                     </p>',
             'note' =>
-                    '<p>
-                    TIP(S):
+                    '<P>
+                    TIP(S):<br>
                     Als je niet van spinazie houdt, kun je het recept ook met bijvoorbeeld
                     broccoli maken.
                     I.p.v. walnoten, zijn pijnboompitten ook erg lekker in dit recept.
                     Voor de pasta kun je kiezen welke je het lekkerst vindt, dat maakt niet
                     zo veel uit.
-
+                    <br>
                     Wees vooral lekker creatief en eet smakelijk!
                     </p>',
             'number_of_servings' => 4,
@@ -658,7 +597,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $pasta->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 500,
             'note_user' => 'Of ravioli of iets anders at je lekker vindt'
         ]);
@@ -674,25 +613,25 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $walnoten->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 30
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $mascarpone->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 4,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $basilicum->id,
-            'measurement_id' => $takjes->id,
+            'measurement' => 'takjes',
             'amount' => 2,
         ]);
 
@@ -722,13 +661,17 @@ class DatabaseSeeder extends Seeder
                 '<p>
                     Doe het kipgehakt, lenteuitje, de gember, knoflook en een snuf peper in een kom.
                     Mix goed door elkaar en maak kleine balletjes.
-
+                </p>
+                <p>
                     Verwarm wat olijfolie een pan met anti aanbaklaag, doe de gehaktballetjes hierin en bak ze tot ze aan alle kanten bruin en zijn (ongeveer 5 minuten) . Doe de gesneden paksoi erbij en bak ongeveer 2 minuten. Haal alles uit de pan en leg op een bord.
-
+                </p>
+                <p>
                     Kook de noedels volgens de verpakking, je kan ze ook in een bakje heet water zetten tot ze zacht zijn. Laat ze uitlekken in een vergiet.
-
+                </p>
+                <p>
                     Doe weer wat olijfolie in de (nu lege) pan, bak hierin de currypasta ongeveer 2 minuten, roer dan de kokosmelk, kippenbouillon, vissaus en honing er doorheen tot de currypasta opgelost is. Doe nu de gehaktballetjes en de paksoi weer terug in de pan, kook tot de gehaktballetjes gaar zijn, ongeveer 5 minuten. Roer dan de koriander erdoor.
-
+                </p>
+                <p>
                     Verdeel de noedels over 2 kommen en verdeel dan de soep er overheen.
                 </p>',
             'note' =>
@@ -742,7 +685,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kipgehakt->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 250,
         ]);
 
@@ -754,14 +697,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gember->id,
-            'measurement_id' => $cm->id,
+            'measurement' => 'cm',
             'amount' => 1,
             'note_user' => 'vers, geraspt'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentje',
             'amount' => 1,
             'note_user' => 'fijngehakt'
         ]);
@@ -773,7 +716,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $olijfolie->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
         ]);
 
@@ -785,45 +728,45 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $rodeCurryPasta->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
             'note_user' => 'bij Amazing Oriental hebben ze hele lekkere!'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kokosmelk->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 200,
             'note_user' => 'klein pakje'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kippenbouillon->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 250,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $vissaus->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $honing->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $noedels->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 75,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $koriander->id,
-            'measurement_id' => $handje->id,
+            'measurement' => 'handje',
             'amount' => 1,
             'note_user' => 'vers, de blaadjes'
         ]);
@@ -837,9 +780,11 @@ class DatabaseSeeder extends Seeder
                 '<p>
                     Maak eerst de saus. Doe een flinke hoeveelheid olijfolie(+- 250 ml) in een pan op gemiddeld vuur. Doe hierna alle ingredienten afgezien van de paddestoelen in de pan en bak zachtjes 5 minuutjes tot het begint te geuren.
                     Hierna gooi je de in blokjes gesneden paddestoelen erbij, zet het vuur zacht en deksel erop. Laat dit +- een half uur tot een uur sudderen. Mocht het voor je gevoel te droog worden, mag je altijd extra olijfolie toevoegen.
-
+                 </p>
+                 <p>
                     Maak als de saus bijna klaar is de puree. Spoel de bonen uit blik af en doe ze in de keukenmachine, samen met het citroensap, 1/2 theelepel zout, een eetlepel olijfolie en 2 eetlepels koud water. Pureer helemaal glad. Gooi de puree in een pan en kook op hoog vuur in ongeveer 3 minuten goed warm.
-
+                 </p>
+                 <p>
                     Schep de puree op en gooi hier de saus met de paddestoelen over. Lekker met bv gebakken sperziebonen of gebakken spruitjes. Ff koken en dan in olie bakken met wat paprika poeder en zout.
                 </p>',
 
@@ -854,14 +799,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kastanjeChampignons->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 650,
             'note_user' => 'Kan je weglaten als je 4 portobello\'s gebruikt'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 5,
             'note_user' => 'fijngehakt'
         ]);
@@ -874,27 +819,27 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $chilivlokken->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $komijnzaad->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 4,
             'note_user' => 'gekneusd in een vijzel'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $korianderzaad->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
             'note_user' => 'gekneusd in een vijzel'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $tomatenpuree->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 2
         ]);
 
@@ -904,7 +849,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $limaBonen->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 700,
             'note_user' => 'of mix met cannellinibonen'
         ]);
@@ -912,7 +857,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $citroensap->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
         ]);
 
@@ -927,9 +872,10 @@ class DatabaseSeeder extends Seeder
             'slug' => 'wraps-met-kip',
             'instructions' =>
                 '<p>
-                    Bak de kip in gaar in de ketjap saus.
+                    Bak de kip in gaar in de ketjap saus.<br>
                     Snijd de komkommer, ijsbergsla, tomaat.
-
+                </p>
+                <p>
                     Gooi de hele boel bij elkaar en eten maar.
                 </p>',
             'note' =>
@@ -937,7 +883,7 @@ class DatabaseSeeder extends Seeder
                     Hoog uit 10 minuten van kast naar bord
                 </p>',
             'number_of_servings' => 2,
-            'image' => '/images/recipePics/wrapsMetKip.jpg'
+            'image' => '/images/recipePics/wrapsMetKip2.jpg'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
@@ -947,7 +893,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kipfilet->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 500,
             'note_user' => 'in blokjes'
         ]);
@@ -981,11 +927,6 @@ class DatabaseSeeder extends Seeder
             'note_user' => 'geraspt'
         ]);
 
-        $recipe->ingredients()->attach($recipe->id, [
-            'ingredient_id' => $yoghurt->id,
-            'note_user' => 'Griekse of Turkse'
-        ]);
-
 
         $recipe = Recipe::create([
             'user_id' => $simoneP->id,
@@ -994,32 +935,37 @@ class DatabaseSeeder extends Seeder
             'instructions' =>
                 '<p>
                     Stap 1: Kies 3 of 4 van je favoriete groenten.
-
+                </p>
+                <p>
                     & kies * = Iets extra’s naar keuze.
-
-
+                </p>
+                <p>
                     De hoeveelheid groente en extra’s kun je zelf inschatten hoeveel je op kan.
-
-                    Alle groenten snijden in stukken van ongeveer 2cm
-                    De * snijden
-                    Knoflook in de knoflookpers of klein snijden
+                </p>
+                <p>
+                    Alle groenten snijden in stukken van ongeveer 2cm<br>
+                    De * snijden<br>
+                    Knoflook in de knoflookpers of klein snijden<br>
                     Alles in een grote schaal gooien en mengen met de olijfolie en kruiden
                     Op de bakplaat en in de oven
-
+                </p>
                     Je kent je eigen oven het best. Ik doe altijd 200 graden – Afhankelijk van welke groenten je hebt, tussen 30 en 40 minuten. Meer zachte groenten (paprika, tomaat, aubergine etc.) hebben korter nodig dan de hardere groenten (aardappels, wortels etc.). Tussendoor even checken of er niks zwart is geworden kan nooit kwaad. En als het dan als het nog bleekjes oogt, een paar minuten extra bakken.
-
+                </p>
+                <p>
                     Bonus receptje/ Lekker voor erbij: Yoghurt dip
-
-                    Griekse of turkse Yoghurt
-                    Kruiden (weer die italiaanse kruidenmix of munt of oregano of wat je hebt)
-                    De kruiden eerst even laten weken in 2 of 3 theelepels (olijf)olie
-                    Evt ook hierin 1 teentje knoflook fijngeperst/gehakt
-
+                </p>
+                <p>
+                    Griekse of turkse Yoghurt<br>
+                    Kruiden (weer die italiaanse kruidenmix of munt of oregano of wat je hebt)<br>
+                    De kruiden eerst even laten weken in 2 of 3 theelepels (olijf)olie<br>
+                    Evt ook hierin 1 teentje knoflook fijngeperst/gehakt<br>
+                </p>
+                <p>
                     Roeren en klaar om te eten!
                 </p>',
             'note' =>
                 '<p>
-                    Voorbereiding: 15/ 20 minuten, bereiding: 30 - 40 minuten,
+                    Voorbereiding: 15/ 20 minuten, bereiding: 30 - 40 minuten,<br>
 
                     Super makkelijk recept.
                 </p>',
@@ -1093,26 +1039,40 @@ class DatabaseSeeder extends Seeder
             'note_user' => 'Of kruiden die je hebt'
         ]);
 
+        $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $yoghurt->id,
+            'note_user' => 'Griekse of Turkse'
+        ]);
+
         $recipe = Recipe::create([
             'user_id' => $ilseB->id,
             'title' => 'Kip met naanbrood, hummus en mangosalsa',
             'slug' => 'kip-met-naanbrood-hummus-en-mangosalsa',
             'instructions' =>
                 '<p>
-
+                    Leg de kipfilets tussen 2 lagen vershoudfolie en sla ze met de platte kant van een steelpan zo plat als schnitzels. Verkruimel de beschuiten boven een diep bord. Voeg peper en zout toe. Klop de eieren los in een ander diep bord. Wentel de kipfilets eerst door het ei en vervolgens door het beschuitkruim.
+                </p>
+                <p>
+                    Verwarm 3 el olie in een pan met antiaanbaklaag en bak de kip in 4-5 min. per kant bruin en krokant. Bak het brood af volgens de aanwijzingen op de verpakking. Snijd de rode peper heel fijn. Schil de mango, snijd in blokjes en prak grof.
+                </p>
+                <p>
+                    Hak de koriander grof en voeg toe. Schep de rode peper en de rest van de olie erdoor. Breng eventueel op smaak met peper en zout. Snijd de naanbroden in de breedte doormidden, snijd ze open en besmeer ze ruim met hummus. Beleg met een pluk rucola, een krokant gebakken kipschnitzel en mangosalsa. Serveer direct. Lekker!
                 </p>',
             'note' =>
                 '<p>
-                    Eén van mijn favoriete recepten is kip met naanbrood, hummus en mangosalsa.
-                    Zelf voeg ik er nog wat extra groenten aan toe om het nog iets gezonder te maken.
-
-                    Ik voeg nog toe:
-                    - Bakje cherrytomaatjes in halfjes (eet je er bij)
-                    - Halve komkommer in schijfjes (eet je er bij)
+                    Eén van mijn favoriete recepten is kip met naanbrood, hummus en mangosalsa.<br>
+                    Zelf voeg ik er nog wat extra groenten aan toe om het nog iets gezonder te maken.<br>
+                </P>
+                <p>
+                    Ik voeg nog toe:<br>
+                    - Bakje cherrytomaatjes in halfjes (eet je er bij)<br>
+                    - Halve komkommer in schijfjes (eet je er bij)<br>
                     - 1 rode paprika in dunne repen, die bak ik mee met de kip
-
+                </p>
+                <p>
                     Vega optie: in plaats van kip kun je ook kiezen voor 4 vega schnitzels.
-
+                </P>
+                <p>
                     Het voelt een beetje als cheaten, maar wel best gezond cheaten ;)
                 </p>',
             'number_of_servings' => 4,
@@ -1138,7 +1098,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $olijfolie->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 4
         ]);
 
@@ -1160,26 +1120,26 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $koriander->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 15,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $hummus->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 6
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $rucola->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 75
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $cherryTomaatjes->id,
-            'measurement_id' => $bakje->id,
+            'measurement' => 'bakje',
             'amount' => 1
         ]);
 
@@ -1224,13 +1184,13 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $nachoChips->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 200,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $vlees->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 200,
         ]);
 
@@ -1241,7 +1201,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2,
         ]);
 
@@ -1264,33 +1224,33 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $tomaat->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
             'note_user' => 'rood'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $cremeFraiche->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 50
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kaas->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
             'note_user' => 'geraspt of cheddar'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $oregano->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $komijn->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2
         ]);
 
@@ -1329,14 +1289,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $spinazie->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 600,
             'note_user' => 'blad spinazie'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $feta->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 200
         ]);
 
@@ -1357,7 +1317,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2,
         ]);
 
@@ -1406,40 +1366,40 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $doperwten->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
             'note_user' => 'verse'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $pesto->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
             'note_user' => 'verse'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $citroensap->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 0.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $citroenrasp->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 0.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gnocchi->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
             'note_user' => 'verse (150 tot 200 gram)'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $rucola->id,
-            'measurement_id' => $handje->id,
+            'measurement' => 'handje',
             'amount' => 1,
         ]);
 
@@ -1451,7 +1411,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $olijfolie->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
             'note_user' => 'extra vierge'
         ]);
@@ -1477,14 +1437,13 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $filodeeg->id,
-            'measurement_id' => $vellen->id,
+            'measurement' => 'grote vellen',
             'amount' => 4,
-            'note_user' => 'groot'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $spinazie->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 600,
         ]);
 
@@ -1495,7 +1454,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2
         ]);
 
@@ -1506,33 +1465,33 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kwark->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 125,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $feta->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $peterselie->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 15,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $dille->id,
-            'measurement_id' => $takjes->id,
+            'measurement' => 'takjes',
             'amount' => 2,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $sesamzaad->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
         ]);
 
@@ -1569,32 +1528,32 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $radijs->id,
-            'measurement_id' => $bos->id,
+            'measurement' => 'bos',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $risottorijst->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gember->id,
-            'measurement_id' => $cm->id,
+            'measurement' => 'cm',
             'amount' => 3,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $zalmsnippers->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 160,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $sojasaus->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 20,
         ]);
 
@@ -1610,31 +1569,31 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $mayonaise->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 50,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gomasio->id,
-            'measurement_id' => $gomasio->id,
+            'measurement' => $gomasio->id,
             'amount' => 5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $groentenbouillon->id,
-            'measurement_id' => $blokje->id,
+            'measurement' => 'blokje',
             'amount' => 0.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $suiker->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 3,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $wittewijnazijn->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 4,
         ]);
 
@@ -1667,26 +1626,26 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $goldenCurryMix->id,
-            'measurement_id' => $pakje->id,
+            'measurement' => 'pakje',
             'amount' => 1,
             'note_user' => 'https://amazingoriental.com/product/golden-curry-sausmix-mild-2/'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $uien->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 350,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $wortel->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $aardappels->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
             'note_user' => 'geen kruimige'
         ]);
@@ -1694,14 +1653,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $water->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 500,
         ]);
 
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kippendijfilet->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 400,
         ]);
 
@@ -1761,26 +1720,26 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $bruineBonen->id,
-            'measurement_id' => $pot->id,
+            'measurement' => 'pot',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kidneyBonen->id,
-            'measurement_id' => $blik->id,
+            'measurement' => 'blik',
             'amount' => 1,
             'note_user' => 'niet in chilisaus'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $mais->id,
-            'measurement_id' => $blikje->id,
+            'measurement' => 'blikje',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kapucijners->id,
-            'measurement_id' => $blikje->id,
+            'measurement' => 'blikje',
             'amount' => 1,
         ]);
 
@@ -1797,7 +1756,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'tenen',
             'amount' => 5,
         ]);
 
@@ -1809,38 +1768,38 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $chipotleSaus->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 3,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $oregano->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 1,
             'note_user' => 'Mexicaanse oregano geniet de voorkeur, even naar de Toko'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $komijn->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $paprikaPoeder->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $tomatenpuree->id,
-            'measurement_id' => $blikje->id,
+            'measurement' => 'blikje',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gepeldeTomaten->id,
-            'measurement_id' => $blik->id,
+            'measurement' => 'blik',
             'amount' => 1,
         ]);
 
@@ -1862,7 +1821,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $pompoenpitten->id,
-            'measurement_id' => $handje->id,
+            'measurement' => 'handje',
             'amount' => 1,
         ]);
 

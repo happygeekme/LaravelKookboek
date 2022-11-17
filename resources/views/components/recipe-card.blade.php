@@ -29,13 +29,6 @@
                 </div>
             </header>
 
-            <div class="text-sm mt-4">
-                <p>
-                    {{ $recipe->note_user }}
-                </p>
-
-            </div>
-
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
                     <img src="{{ $recipe->user->image }}" alt="Lary avatar" width="50px">
@@ -48,7 +41,7 @@
                 <div>
                     <a href="/recipes/{{ $recipe->slug }}"
                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
-                    >Read More</a>
+                    >Recept bekijken</a>
                 </div>
             </footer>
         </div>
