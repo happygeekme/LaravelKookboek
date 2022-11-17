@@ -63,11 +63,10 @@
                     <div class="ml-3 mt-4">
                         <h5 class="font-bold">Ingredienten:</h5>
                         <ul>
-                        @foreach($recipe->ingredients as $ingredient)
-                            <li>
-                               - {{ $ingredient->pivot->amount }}  {{ $ingredient->name }} {{$ingredient->pivot->note_user}}
-                            </li>
-
+                            @foreach($recipe->ingredients as $ingredient)
+                                <li>
+                                   - {{ $ingredient->pivot->amount }} {{ $ingredient->pivot->measurement }} {{ $ingredient->name }} {{$ingredient->pivot->note_user}}
+                                </li>
                             @endforeach
                         </ul>
                     </div>

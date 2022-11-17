@@ -13,12 +13,9 @@ class Ingredient extends Model
     public function recipes()
     {
         return $this->belongsToMany(Recipe::class)
-            ->withPivot('measurement_id', 'amount', 'note_user')
+            ->withPivot( 'measurement', 'amount', 'note_user')
             ->withTimestamps();
     }
 
-    public function measurement()
-    {
-        return $this->hasMany(Measurement::class);
-    }
+
 }

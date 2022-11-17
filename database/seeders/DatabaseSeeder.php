@@ -7,8 +7,6 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Recipe;
 use App\Models\Ingredient;
-use App\Models\Measurement;
-use App\Models\Ingredientrecipe;
 use Illuminate\Validation\Rules\In;
 
 class DatabaseSeeder extends Seeder
@@ -93,73 +91,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 //MEASUREMENTS
-        $kuipje = Measurement::create([
-            'name' => 'kuipje'
-        ]);
 
-        $gram = Measurement::create([
-            'name' => 'gram'
-        ]);
-
-        $ml = Measurement::create([
-            'name' => 'ml'
-        ]);
-
-        $cm = Measurement::create([
-            'name' => 'cm'
-        ]);
-
-        $theelepel = Measurement::create([
-            'name' => 'theelepel(s)'
-        ]);
-
-        $eetlepel = Measurement::create([
-            'name' => 'eetlepel(s)'
-        ]);
-
-        $teentjes = Measurement::create([
-            'name' => 'teentje(s)'
-        ]);
-
-        $takjes = Measurement::create([
-            'name' => 'takje(s)'
-        ]);
-
-        $handje = Measurement::create([
-            'name' => 'handje(s)'
-        ]);
-
-        $bakje = Measurement::create([
-            'name' => 'bakje'
-        ]);
-
-        $vellen = Measurement::create([
-            'name' => 'vel(len)'
-        ]);
-
-        $bos = Measurement::create([
-            'name' => 'bos(sen)'
-        ]);
-
-        $blokje = Measurement::create([
-            'name' => 'blokje'
-        ]);
-
-        $pakje = Measurement::create([
-            'name' => 'pakje'
-         ]);
-
-        $pot = Measurement::create([
-            'name' => 'pot(ten)'
-        ]);
-
-        $blikje = Measurement::create([
-            'name' => 'blikje(s)'
-        ]);
-
-        $blik = Measurement::create([
-            'name' => 'blik(ken)'
-        ]);
 
 //INGREDIENTS
         $kipfilet = Ingredient::create([
@@ -231,7 +163,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $lenteui = Ingredient::create([
-            'name' => 'lenteui(tjes)',
+            'name' => 'lenteui(en)',
         ]);
 
         $paksoi = Ingredient::create([
@@ -617,7 +549,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kruidenkaas->id,
-            'measurement_id' => $kuipje->id,
+            'measurement' => 'kuipje',
             'amount' => 1,
         ]);
 
@@ -665,7 +597,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $pasta->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 500,
             'note_user' => 'Of ravioli of iets anders at je lekker vindt'
         ]);
@@ -681,25 +613,25 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $walnoten->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 30
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $mascarpone->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 4,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $basilicum->id,
-            'measurement_id' => $takjes->id,
+            'measurement' => 'takjes',
             'amount' => 2,
         ]);
 
@@ -753,7 +685,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kipgehakt->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 250,
         ]);
 
@@ -765,14 +697,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gember->id,
-            'measurement_id' => $cm->id,
+            'measurement' => 'cm',
             'amount' => 1,
             'note_user' => 'vers, geraspt'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentje',
             'amount' => 1,
             'note_user' => 'fijngehakt'
         ]);
@@ -784,7 +716,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $olijfolie->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
         ]);
 
@@ -796,45 +728,45 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $rodeCurryPasta->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
             'note_user' => 'bij Amazing Oriental hebben ze hele lekkere!'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kokosmelk->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 200,
             'note_user' => 'klein pakje'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kippenbouillon->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 250,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $vissaus->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $honing->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $noedels->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 75,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $koriander->id,
-            'measurement_id' => $handje->id,
+            'measurement' => 'handje',
             'amount' => 1,
             'note_user' => 'vers, de blaadjes'
         ]);
@@ -867,14 +799,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kastanjeChampignons->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 650,
             'note_user' => 'Kan je weglaten als je 4 portobello\'s gebruikt'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 5,
             'note_user' => 'fijngehakt'
         ]);
@@ -887,27 +819,27 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $chilivlokken->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $komijnzaad->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 4,
             'note_user' => 'gekneusd in een vijzel'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $korianderzaad->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
             'note_user' => 'gekneusd in een vijzel'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $tomatenpuree->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 2
         ]);
 
@@ -917,7 +849,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $limaBonen->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 700,
             'note_user' => 'of mix met cannellinibonen'
         ]);
@@ -925,7 +857,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $citroensap->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
         ]);
 
@@ -961,7 +893,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kipfilet->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 500,
             'note_user' => 'in blokjes'
         ]);
@@ -1166,7 +1098,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $olijfolie->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 4
         ]);
 
@@ -1188,26 +1120,26 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $koriander->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 15,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $hummus->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 6
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $rucola->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 75
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $cherryTomaatjes->id,
-            'measurement_id' => $bakje->id,
+            'measurement' => 'bakje',
             'amount' => 1
         ]);
 
@@ -1252,13 +1184,13 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $nachoChips->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 200,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $vlees->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 200,
         ]);
 
@@ -1269,7 +1201,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2,
         ]);
 
@@ -1292,33 +1224,33 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $tomaat->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
             'note_user' => 'rood'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $cremeFraiche->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 50
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kaas->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
             'note_user' => 'geraspt of cheddar'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $oregano->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $komijn->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2
         ]);
 
@@ -1357,14 +1289,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $spinazie->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 600,
             'note_user' => 'blad spinazie'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $feta->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 200
         ]);
 
@@ -1385,7 +1317,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2,
         ]);
 
@@ -1434,40 +1366,40 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $doperwten->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
             'note_user' => 'verse'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $pesto->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1.5,
             'note_user' => 'verse'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $citroensap->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 0.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $citroenrasp->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 0.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gnocchi->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
             'note_user' => 'verse (150 tot 200 gram)'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $rucola->id,
-            'measurement_id' => $handje->id,
+            'measurement' => 'handje',
             'amount' => 1,
         ]);
 
@@ -1479,7 +1411,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $olijfolie->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
             'note_user' => 'extra vierge'
         ]);
@@ -1505,14 +1437,13 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $filodeeg->id,
-            'measurement_id' => $vellen->id,
+            'measurement' => 'grote vellen',
             'amount' => 4,
-            'note_user' => 'groot'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $spinazie->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 600,
         ]);
 
@@ -1523,7 +1454,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'teentjes',
             'amount' => 2
         ]);
 
@@ -1534,33 +1465,33 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kwark->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 125,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $feta->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $peterselie->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 15,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $dille->id,
-            'measurement_id' => $takjes->id,
+            'measurement' => 'takjes',
             'amount' => 2,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $sesamzaad->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepel',
             'amount' => 1,
         ]);
 
@@ -1597,32 +1528,32 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $radijs->id,
-            'measurement_id' => $bos->id,
+            'measurement' => 'bos',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $risottorijst->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gember->id,
-            'measurement_id' => $cm->id,
+            'measurement' => 'cm',
             'amount' => 3,
             'note_user' => 'vers'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $zalmsnippers->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 160,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $sojasaus->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 20,
         ]);
 
@@ -1638,31 +1569,31 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $mayonaise->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 50,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gomasio->id,
-            'measurement_id' => $gomasio->id,
+            'measurement' => $gomasio->id,
             'amount' => 5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $groentenbouillon->id,
-            'measurement_id' => $blokje->id,
+            'measurement' => 'blokje',
             'amount' => 0.5,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $suiker->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 3,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $wittewijnazijn->id,
-            'measurement_id' => $eetlepel->id,
+            'measurement' => 'eetlepels',
             'amount' => 4,
         ]);
 
@@ -1695,26 +1626,26 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $goldenCurryMix->id,
-            'measurement_id' => $pakje->id,
+            'measurement' => 'pakje',
             'amount' => 1,
             'note_user' => 'https://amazingoriental.com/product/golden-curry-sausmix-mild-2/'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $uien->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 350,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $wortel->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 100,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $aardappels->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 150,
             'note_user' => 'geen kruimige'
         ]);
@@ -1722,14 +1653,14 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $water->id,
-            'measurement_id' => $ml->id,
+            'measurement' => 'ml',
             'amount' => 500,
         ]);
 
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kippendijfilet->id,
-            'measurement_id' => $gram->id,
+            'measurement' => 'gram',
             'amount' => 400,
         ]);
 
@@ -1789,26 +1720,26 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $bruineBonen->id,
-            'measurement_id' => $pot->id,
+            'measurement' => 'pot',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kidneyBonen->id,
-            'measurement_id' => $blik->id,
+            'measurement' => 'blik',
             'amount' => 1,
             'note_user' => 'niet in chilisaus'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $mais->id,
-            'measurement_id' => $blikje->id,
+            'measurement' => 'blikje',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $kapucijners->id,
-            'measurement_id' => $blikje->id,
+            'measurement' => 'blikje',
             'amount' => 1,
         ]);
 
@@ -1825,7 +1756,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $knoflook->id,
-            'measurement_id' => $teentjes->id,
+            'measurement' => 'tenen',
             'amount' => 5,
         ]);
 
@@ -1837,38 +1768,38 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $chipotleSaus->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 3,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $oregano->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepel',
             'amount' => 1,
             'note_user' => 'Mexicaanse oregano geniet de voorkeur, even naar de Toko'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $komijn->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $paprikaPoeder->id,
-            'measurement_id' => $theelepel->id,
+            'measurement' => 'theelepels',
             'amount' => 2,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $tomatenpuree->id,
-            'measurement_id' => $blikje->id,
+            'measurement' => 'blikje',
             'amount' => 1,
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $gepeldeTomaten->id,
-            'measurement_id' => $blik->id,
+            'measurement' => 'blik',
             'amount' => 1,
         ]);
 
@@ -1890,7 +1821,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $pompoenpitten->id,
-            'measurement_id' => $handje->id,
+            'measurement' => 'handje',
             'amount' => 1,
         ]);
 
