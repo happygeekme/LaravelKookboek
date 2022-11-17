@@ -1339,6 +1339,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
+            'ingredient_id' => $cashewnoten->id
+        ]);
+
+        $recipe->ingredients()->attach($recipe->id, [
             'ingredient_id' => $zalm->id,
             'note_user' => 'gerookt, OF panchetta'
         ]);

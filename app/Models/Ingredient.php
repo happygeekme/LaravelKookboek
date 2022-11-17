@@ -10,6 +10,7 @@ class Ingredient extends Model
 {
     use HasFactory;
 
+
     public function recipes()
     {
         return $this->belongsToMany(Recipe::class)

@@ -9,6 +9,15 @@ class Recipe extends Model
 {
     use HasFactory;
 
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['search'] ?? false) {
+            $query
+                ->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('instructions', 'like', '%' . request('search') . '%');
+        }
+    }
+
     public function ingredients()
     {
         return $this->belongsToMany(Ingredient::class)
@@ -20,5 +29,7 @@ class Recipe extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
 
 }
