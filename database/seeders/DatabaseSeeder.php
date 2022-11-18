@@ -27,12 +27,12 @@ class DatabaseSeeder extends Seeder
 
         $manon = User::create([
             'name' => 'Manon',
-            'image' => '/images/userPics/Manon(1).jpg'
+            'image' => '/images/userPics/Manon.jpg'
         ]);
 
         $jitske = User::create([
             'name' => 'Jitske',
-            'image' => '/images/userPics/Jitske(1).jpg'
+            'image' => '/images/userPics/Jitske.jpg'
         ]);
 
         $martijnH = User::create([
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
 
         $simoneP = User::create([
             'name' => 'Simone',
-            'image' => '/images/userPics/SimoneP2.jpg'
+            'image' => '/images/userPics/SimoneP.jpg'
         ]);
 
         $jorik = User::create([
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
 
         $ilseB = User::create([
             'name' => 'Ilse',
-            'image' => '/images/userPics/IlseB2.jpg'
+            'image' => '/images/userPics/IlseB.jpg'
         ]);
 
         $pascal = User::create([
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
 
         $quinn = User::create([
             'name' => 'Quinn',
-            'image' => '/images/userPics/Quinn(1).jpg'
+            'image' => '/images/userPics/Quinn.jpg'
         ]);
 
         $paulD = User::create([

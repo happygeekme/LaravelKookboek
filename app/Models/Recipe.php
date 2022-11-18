@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
-    use HasFactory;
 
     public function scopeFilter($query, array $filters)
     {
         if ($filters['search'] ?? false) {
             $query
                 ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('instructions', 'like', '%' . request('search') . '%');
+                ->orWhere('instructions', 'like', '%' . request('search') . '%')
+                ->orWhere('note', 'like', '%' . request('search') . '%');
         }
     }
 
@@ -24,6 +24,8 @@ class Recipe extends Model
             ->withPivot('measurement', 'amount', 'note_user')
             ->withTimestamps();
     }
+
+
 
     public function user()
     {
