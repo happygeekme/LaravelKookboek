@@ -7,5 +7,5 @@ use App\Models\Ingredient;
 
 class IngredientController extends Controller
 {
-    //
+
 }

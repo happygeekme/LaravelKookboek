@@ -8,7 +8,15 @@ use App\Models\Recipe;
 
 class Ingredient extends Model
 {
-    use HasFactory;
+
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['search'] ?? false) {
+            $query
+                ->where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('note_user', 'like', '%' . request('search') . '%');
+        }
+    }
 
     public function recipes()
     {

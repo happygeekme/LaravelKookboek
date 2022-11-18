@@ -6,13 +6,14 @@
     <h2 class="inline-flex mt-2">Voor en door Experianen </h2>
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
-        <!--  Category -->
+        <!-- Experiaan -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
             <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
-                <option value="category" disabled selected>Category
+                <option value="experiaan" disabled selected>Experiaan
                 </option>
-                <option value="personal">Personal</option>
-                <option value="business">Business</option>
+                @foreach($recipes as $recipe)
+                    <option value="users/{{ $recipe->user->name }}">{{ $recipe->user->name }}</option>
+                @endforeach
             </select>
 
             <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
@@ -51,9 +52,17 @@
         <!-- Search -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
             <form method="GET" action="#">
-                <input type="text" name="search" placeholder="Find something"
-                       class="bg-transparent placeholder-black font-semibold text-sm">
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Zoek Recept of Ingredient"
+                    class="bg-transparent placeholder-black font-semibold text-sm"
+                    value="{{ request('search') }}"
+                >
             </form>
         </div>
+
+
+
     </div>
 </header>

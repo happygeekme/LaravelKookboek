@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ingredient_recipe', function (Blueprint $table) {
-//            $table->id();
             $table->foreignId('recipe_id');
             $table->foreignId('ingredient_id');
             $table->string('measurement')->nullable();

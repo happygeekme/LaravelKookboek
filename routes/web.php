@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Models\Recipe;
+use \App\Http\Controllers\RecipeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +15,10 @@ use \App\Models\Recipe;
 |
 */
 
-Route::get('/', function () {
-    return view('recipes', [
-        'recipes' => Recipe::all()
-    ]);
-});
+Route::get('/', [RecipeController::class, 'index'])->name('home');
 
-Route::get('recipes/{recipe:slug}', function (Recipe $recipe) {
-    return view('recipe', [
-        'recipe' => $recipe,
-        'ingredients' => $recipe->ingredients,
-        'user' => $recipe->user,
-    ]);
-});
+Route::get('recipes/{recipe:slug}', [RecipeController::class, 'show']);
+
+Route::get('users/{username}', [RecipeController::class, 'show']);
+
+

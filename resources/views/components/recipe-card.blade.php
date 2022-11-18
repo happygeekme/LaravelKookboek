@@ -31,7 +31,7 @@
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
-                    <img src="{{ $recipe->user->image }}" alt="Lary avatar" width="50px">
+                    <img src="{{ $recipe->user->image }}" alt="User Image" width="50px">
                     <div class="ml-3">
                         <h5 class="font-bold">{{ $recipe->user->name }}</h5>
                         <h6>Experiaan</h6>
