@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RecipeController;
+use \App\Http\Controllers\CocktailController;
 
 
 /*
@@ -15,7 +16,7 @@ use \App\Http\Controllers\RecipeController;
 |
 */
 
-Route::get('/', [RecipeController::class, 'index'])->name('home');
+Route::get('/', [RecipeController::class, 'index'] );
 
 Route::get('recipes/{recipe:slug}', [RecipeController::class, 'show']);
 

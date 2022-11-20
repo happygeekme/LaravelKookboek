@@ -7,8 +7,8 @@
 
             <div class="lg:grid lg:grid-cols-2">
 
-                <x-recipe-featured-card :recipe="$recipes[0]"/>
-                <x-cocktail-featured-card />
+                <x-recipe-featured-card :recipe="$recipes[rand(0, ($recipes->count()-1))]"/>
+                <x-cocktail-featured-card :cocktail="$cocktail"/>
 
             </div>
 

@@ -1178,8 +1178,7 @@ class DatabaseSeeder extends Seeder
                     In plaats van losse groenten kun je voor de snelle variant ook een zak voorgesneden groentemix gebruiken.
                 </p>',
             'number_of_servings' => 2,
-            'image' => '/images/recipePics/nachosMetGroentenEnKaas.jpg',
-            'link' => 'http://recepten.lindascal.nl/nachos-met-groenten-een-kaas/'
+            'image' => '/images/recipePics/nachosMetGroentenEnKaas.jpg'
         ]);
 
         $recipe->ingredients()->attach($recipe->id, [
