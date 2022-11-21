@@ -14,10 +14,15 @@ use \App\Http\Controllers\RecipeController;
 |
 */
 
-Route::get('/', [RecipeController::class, 'index'] );
+Route::get('/', [RecipeController::class, 'getRandom'] );
+
+Route::get('recipes', [RecipeController::class, 'indexMeals'] );
 
 Route::get('recipes/{recipe:slug}', [RecipeController::class, 'show']);
 
 Route::get('users/{username}', [RecipeController::class, 'show']);
 
+Route::get('drinks', [RecipeController::class, 'indexDrinks']);
+
+Route::get('drinks/{drink:idDrink}', [RecipeController::class, 'showDrink']);
 

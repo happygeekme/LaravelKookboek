@@ -7,17 +7,13 @@
             <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
 
                 <div class="col-span-12">
-                    <img src="{{ $recipe->image }}" alt="Recipe Image" class="rounded-xl">
-
-                    <p class="mt-4 block text-gray-400 text-xs">
-                        Toegevoegd: <time>{{ $recipe->created_at->diffForHumans() }}</time>
-                    </p>
+                    <img src="{{ $drink['strDrinkThumb'] }}" alt="Recipe Image" class="rounded-xl">
                 </div>
 
                 <div class="col-span-12">
                     <div class="hidden lg:flex justify-between mb-6">
 
-                        <a href="/recipes"
+                        <a href="/drinks"
                            class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">
                             <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                                 <g fill="none" fill-rule="evenodd">
@@ -29,48 +25,41 @@
                                 </g>
                             </svg>
 
-                            Terug naar recepten
+                            Terug overzicht drankjes
                         </a>
 
                         <div class="space-x-2">
                             <a href="#"
                                class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
-                               style="font-size: 10px">Techniques</a>
+                               style="font-size: 10px">{{ $drink['strCategory'] }}</a>
                             <a href="#"
                                class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                               style="font-size: 10px">Updates</a>
+                               style="font-size: 10px">{{ $drink['strAlcoholic'] }}</a>
                         </div>
                     </div>
                     <div class="lg:grid-cols-12">
                         <div class="col-span-10">
                             <h1 class="font-bold text-3xl lg:text-4xl mb-10">
-                                {{ $recipe->title }}
+                                {{ $drink['strDrink'] }}
                             </h1>
                         </div>
-                        <div class="col-span-2">
-                            <div class="flex items-center lg:justify-left text-sm">
-                                <img src="{{ $recipe->user->image }}" alt="User Image" width="200px">
-                            </div>
-                            <div class="ml-3 mt-4">
-                                Recept ontvangen van:<h5 class="font-bold">{{ $recipe->user->name }}</h5>
-                            </div>
                         </div>
                     </div>
 
-                <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
+                    <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
 
 
-                    <div class="ml-3 mt-4">
-                        <h5 class="font-bold">Ingredienten:</h5>
-                        <ul>
-                            @foreach($recipe->ingredients as $ingredient)
-                                <li>
-                                   - {{ $ingredient->pivot->amount }} {{ $ingredient->pivot->measurement }} {{ $ingredient->name }} {{$ingredient->pivot->note_user}}
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
+{{--                        <div class="ml-3 mt-4">--}}
+{{--                            <h5 class="font-bold">Ingredienten:</h5>--}}
+{{--                            <ul>--}}
+{{--                                @for($recipe->ingredients as $ingredient)--}}
+{{--                                    <li>--}}
+{{--                                        - {{ $ingredient->pivot->amount }} {{ $ingredient->pivot->measurement }} {{ $ingredient->name }} {{$ingredient->pivot->note_user}}--}}
+{{--                                    </li>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
 
 
@@ -78,9 +67,9 @@
 
                         <h2 class="font-bold text-lg">Bereidingswijze:</h2>
 
-                        <p>{!! $recipe->instructions !!}</p>
+                        <p>{!! $drink['strInstructions'] !!}</p>
 
-                        <p>{!! $recipe->note !!}</p>
+{{--                        <p>{!! $recipe->note !!}</p>--}}
 
                     </div>
                 </div>

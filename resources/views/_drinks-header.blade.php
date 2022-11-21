@@ -1,4 +1,5 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
+
     <h1 class="text-4xl">
         <span class="text-blue-500">Experius</span> Kookboek
     </h1>
@@ -6,14 +7,13 @@
     <h2 class="inline-flex mt-2">Voor en door Experianen </h2>
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
-        <!-- Experiaan -->
+        <!-- Alcohol of niet -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
             <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
-                <option value="experiaan" disabled selected>Experiaan
+                <option value="alcohol" disabled selected>Met of Zonder Alcohol?
                 </option>
-                @foreach($recipes as $recipe)
-                    <option value="users/{{ $recipe->user->name }}">{{ $recipe->user->name }}</option>
-                @endforeach
+                    <option value="Alcoholic">Alcoholische drankjes</option>
+                    <option value="Non_Alcoholic">Drankjes zonder alcohol</option>
             </select>
 
             <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"

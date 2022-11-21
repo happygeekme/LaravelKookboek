@@ -5,16 +5,9 @@
 
         @if ($recipes->count())
 
-            <div class="lg:grid lg:grid-cols-2">
-
-                <x-recipe-featured-card :recipe="$recipes[rand(0, ($recipes->count()-1))]"/>
-                <x-cocktail-featured-card :cocktail="$cocktail"/>
-
-            </div>
-
             @if ($recipes->count() > 1)
                 <div class="lg:grid lg:grid-cols-3">
-                    @foreach($recipes->skip(1) as $recipe)
+                    @foreach($recipes as $recipe)
                         <x-recipe-card :recipe="$recipe"/>
                     @endforeach
                 </div>
@@ -23,7 +16,6 @@
         @else
             <p>Er zijn nog geen recepten beschikbaar, we zien je graag later terug.</p>
         @endif
-
     </main>
 </x-layout>
 
