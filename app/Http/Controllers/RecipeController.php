@@ -13,7 +13,6 @@ class RecipeController extends Controller
         protected CocktailApi $cocktails
     )
     {
-
     }
 
     public function index()
