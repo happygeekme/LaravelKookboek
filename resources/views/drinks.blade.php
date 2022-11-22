@@ -10,7 +10,7 @@
             </div>
 
         @else
-            <p>Er zijn nog geen drankjes beschikbaar, we zien je graag later terug.</p>
+            <p>Er zijn geen drankjes beschikbaar, we zien je graag later terug.</p>
 
         @endif
 

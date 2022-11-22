@@ -1,5 +1,4 @@
 <x-layout>
-
     <section class="px-6 py-8">
 
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
@@ -49,19 +48,92 @@
                     <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
 
 
-{{--                        <div class="ml-3 mt-4">--}}
-{{--                            <h5 class="font-bold">Ingredienten:</h5>--}}
-{{--                            <ul>--}}
-{{--                                @for($recipe->ingredients as $ingredient)--}}
-{{--                                    <li>--}}
-{{--                                        - {{ $ingredient->pivot->amount }} {{ $ingredient->pivot->measurement }} {{ $ingredient->name }} {{$ingredient->pivot->note_user}}--}}
-{{--                                    </li>--}}
-{{--                                @endforeach--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                        <div class="ml-3 mt-4">
+                            <div>
+                                <h5 class="font-bold">Type glas:</h5>
+                                {{ $drink['strGlass'] }}
+                            </div>
 
-
+                            <h5 class="font-bold">Ingredienten:</h5>
+                            <ul>
+                                @if($drink['strIngredient1'])
+                                    <li>
+                                        - {{ $drink['strMeasure1'] }} {{ $drink['strIngredient1'] }}
+                                    </li>
+                                @endif
+                                @if($drink['strIngredient2'])
+                                    <li>
+                                        - {{ $drink['strMeasure2'] }} {{ $drink['strIngredient2'] }}
+                                    </li>
+                                @endif
+                                @if($drink['strIngredient3'])
+                                    <li>
+                                        - {{ $drink['strMeasure3'] }} {{ $drink['strIngredient3'] }}
+                                    </li>
+                                @endif
+                                @if($drink['strIngredient4'])
+                                    <li>
+                                        - {{ $drink['strMeasure4'] }} {{ $drink['strIngredient4'] }}
+                                    </li>
+                                @endif
+                                @if($drink['strIngredient5'])
+                                    <li>
+                                        - {{ $drink['strMeasure5'] }} {{ $drink['strIngredient5'] }}
+                                    </li>
+                                @endif
+                                    @if($drink['strIngredient6'])
+                                        <li>
+                                            - {{ $drink['strMeasure6'] }} {{ $drink['strIngredient6'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient7'])
+                                        <li>
+                                            - {{ $drink['strMeasure7'] }} {{ $drink['strIngredient7'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient8'])
+                                        <li>
+                                            - {{ $drink['strMeasure8'] }} {{ $drink['strIngredient8'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient9'])
+                                        <li>
+                                            - {{ $drink['strMeasure9'] }} {{ $drink['strIngredient9'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient10'])
+                                        <li>
+                                            - {{ $drink['strMeasure10'] }} {{ $drink['strIngredient10'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient11'])
+                                        <li>
+                                            - {{ $drink['strMeasure11'] }} {{ $drink['strIngredient11'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient12'])
+                                        <li>
+                                            - {{ $drink['strMeasure12'] }} {{ $drink['strIngredient12'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient13'])
+                                        <li>
+                                            - {{ $drink['strMeasure13'] }} {{ $drink['strIngredient13'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient14'])
+                                        <li>
+                                            - {{ $drink['strMeasure14'] }} {{ $drink['strIngredient14'] }}
+                                        </li>
+                                    @endif
+                                    @if($drink['strIngredient15'])
+                                        <li>
+                                            - {{ $drink['strMeasure15'] }} {{ $drink['strIngredient15'] }}
+                                        </li>
+                                    @endif
+                            </ul>
+                        </div>
+                    </div>
 
                     <div class="space-y-4 lg:text-lg leading-loose col-span-8">
 
@@ -69,15 +141,10 @@
 
                         <p>{!! $drink['strInstructions'] !!}</p>
 
-{{--                        <p>{!! $recipe->note !!}</p>--}}
 
                     </div>
-                </div>
             </article>
         </main>
-
-
     </section>
-
 
 </x-layout>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RecipeController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +19,17 @@ Route::get('/', [RecipeController::class, 'getRandom'] );
 
 Route::get('recipes', [RecipeController::class, 'indexMeals'] );
 
-Route::get('recipes/{recipe:slug}', [RecipeController::class, 'show']);
+//Route::get('ingredients', [RecipeController::class, 'mealsByIngredient']);
 
-Route::get('users/{username}', [RecipeController::class, 'show']);
+Route::get('recipes/{recipe:slug}', [RecipeController::class, 'showMeals']);
 
 Route::get('drinks', [RecipeController::class, 'indexDrinks']);
 
-Route::get('drinks/{drink:idDrink}', [RecipeController::class, 'showDrink']);
+Route::get('drinks/no-alcohol', [RecipeController::class, 'nonAlcoholic']);
+
+Route::get('drinks/with-alcohol', [RecipeController::class, 'alcoholic']);
+
+Route::get('drinks/{drink:slug}', [RecipeController::class, 'showDrink']);
+
+Route::get('drinks/search', [RecipeController::class, 'searchDrinkByName']);
 

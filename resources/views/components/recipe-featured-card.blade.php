@@ -44,7 +44,6 @@
                     <img src="{{ $recipe->user->image }}" alt="user image" width="50px">
                     <div class="ml-3">
                         <h5 class="font-bold">{{ $recipe->user->name }}</h5>
-                        <h6>Experiaan</h6>
                     </div>
                 </div>
 

@@ -19,7 +19,7 @@
 
                 <div class="mt-4">
                     <h1 class="text-3xl">
-                        <a href="/drinks/{{ $drink['idDrink'] }}" >
+                        <a href="/drinks/{{ $drink['slug'] }}" >
                             {{ $drink['strDrink'] }}
                         </a>
                     </h1>
@@ -29,7 +29,7 @@
             <footer class="flex justify-between items-center mt-8">
 
                 <div>
-                    <a href="/drinks/{{ $drink['idDrink'] }}"
+                    <a href="/drinks/{{ $drink['slug'] }}"
                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
                     >Bekijken</a>
                 </div>

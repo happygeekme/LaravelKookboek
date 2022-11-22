@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Recipe;
 use App\Service\CocktailApi;
+use App\Models\Ingredient;
+use Illuminate\Support\Arr;
 
 
 class RecipeController extends Controller
@@ -19,57 +20,64 @@ class RecipeController extends Controller
     {
         return view('home', [
             'recipe' => Recipe::inRandomOrder()->first(),
-            'drink' => $this->drinks->getRandom()['drinks'][0]
+            'drink' => $this->drinks->getRandom()[0]
         ]);
     }
 
     public function indexMeals()
     {
         return view('recipes', [
-           'recipes' => Recipe::latest()->filter(request(['search']))->get(),
+           'recipes' => Recipe::latest()->filter(request(['searchRecipe']))->get(),
         ]);
     }
 
-    public function addSlugArray($array)
-    {
-        for($i=0; $i < count($array); $i++ ) {
-            $tolower = strtolower([$i]['strDrink']);
-            $slug = str_replace(' ', '-', $tolower);
-            $array[$i]['slug'] = $slug;
-        }
-    }
-
-    public function indexDrinks()
-    {
-        $alcoholic = $this->drinks->alcoholicOrNonAlcoholic('Alcoholic');
-        $nonAlcoholic = $this->drinks->alcoholicOrNonAlcoholic('Non_Alcoholic');
-
-        $allDrinks = array_merge($alcoholic['drinks'], $nonAlcoholic['drinks']);
-
-        return view('drinks', [
-            'drinks' => $allDrinks,
-            'alcoholicDrinks' => $alcoholic,
-            'nonAlcoholicDrinks' => $nonAlcoholic
-        ]);
-        }
-
-    public function show(Recipe $recipe)
+    public function showMeals(Recipe $recipe)
     {
         return view('recipe', [
             'recipe' => $recipe
         ]);
     }
 
-    public function showDrink($id)
+    public function indexDrinks()
     {
-        return view('drink', [
-            'drink' => $this->drinks->getById($id)['drinks'][0]
+        $alcoholic = $this->drinks->alcoholicOrNonAlcoholic('Alcoholic');
+        $nonAlcoholic = $this->drinks->alcoholicOrNonAlcoholic('Non_Alcoholic');
+        $allDrinks = array_merge($alcoholic, $nonAlcoholic);
+
+        return view('drinks', [
+            'drinks' => Arr::random($allDrinks, 21),
         ]);
     }
 
-    protected function getRecipes()
+    public function nonAlcoholic()
     {
-        return Recipe::latest()->filter()->get();
+        return view('drinks', [
+            'drinks' => $this->drinks->alcoholicOrNonAlcoholic('Non_Alcoholic')
+        ]);
+    }
+
+    public function alcoholic()
+    {
+        return view('drinks', [
+            'drinks' => $this->drinks->alcoholicOrNonAlcoholic('Alcoholic')
+        ]);
+    }
+
+    public function showDrink($slug)
+    {
+
+        $name = str_replace('-', ' ', $slug);
+        return view('drink', [
+            'drink' => $this->drinks->getByName($name)
+        ]);
+    }
+
+    public function searchDrinkByName()
+    {
+        @dd($this->drinks->getByName(request(['searchDrink'])));
+        return view('drinks', [
+            'drinks' => $this->drinks->getByName(request(['searchDrink']))
+        ]);
     }
 
 }
