@@ -30,8 +30,9 @@ class RecipeController extends Controller
         ]);
     }
 
-    protected function getRecipes()
+    protected function create()
     {
-        return Recipe::latest()->filter()->get();
+        return view('recipe.create');
     }
+
 }

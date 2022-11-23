@@ -8,18 +8,32 @@
 <body style="font-family: Open Sans, sans-serif">
 <section class="px-6 py-8">
     <nav class="md:flex md:justify-between md:items-center">
+
         <div>
             <a href="/">
                 <img src="/images/experius_logos/experius-logo.png" alt="Experius Logo" width="200" height="16">
             </a>
         </div>
 
-        <div class="mt-8 md:mt-0">
-            <a href="/" class="text-xs font-bold uppercase">Home Page</a>
+        <div class="mt-8 md:mt-0 flex items-center" >
+            @auth
+                <span class="text-xs font-bold uppercase">Welkom, {{ auth()->user()->name }}!</span>
 
-            <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                Log in om recepten toe te voegen
-            </a>
+                <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
+                    @csrf
+                    <button type="submit">Log uit</button>
+                </form>
+
+                <a href="/send-recipe" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                    Recept insturen
+                </a>
+            @else
+                <a href="/register" class="text-xs font-bold uppercase">Account aanmaken</a>
+
+                <a href="/login" class="bg-blue-500 ml-3 px-10 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                    Log in
+                </a>
+            @endguest
         </div>
     </nav>
 
@@ -49,5 +63,11 @@
         </div>
     </footer>
 </section>
+
+@if (session()->has('success'))
+    <div class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
+        <p>{{ session()->get('success') }}</p>
+    </div>
+@endif
 </body>
 
