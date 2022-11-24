@@ -12,9 +12,9 @@ class Recipe extends Model
     {
         if ($filters['search'] ?? false) {
             $query
-                ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('instructions', 'like', '%' . request('search') . '%')
-                ->orWhere('note', 'like', '%' . request('search') . '%');
+                ->where('title', 'like', '%' . request('searchRecipe') . '%')
+                ->orWhere('instructions', 'like', '%' . request('searchRecipe') . '%')
+                ->orWhere('note', 'like', '%' . request('searchRecipe') . '%');
         }
     }
 
@@ -24,7 +24,6 @@ class Recipe extends Model
             ->withPivot('measurement', 'amount', 'note_user')
             ->withTimestamps();
     }
-
 
 
     public function user()
