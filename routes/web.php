@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\RecipeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use App\Http\Controllers\FormController;
-
+use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +17,20 @@ use App\Http\Controllers\FormController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [RecipeController::class, 'getRandom'] );
 
 Route::get('recipes', [RecipeController::class, 'indexMeals'] );
 Route::get('recipes/{recipe:slug}', [RecipeController::class, 'showMeal']);
 
-Route::get('ingredients', [\App\Http\Controllers\IngredientController::class, 'mealsByIngredient']);
+Route::get('ingredients', [IngredientController::class, 'mealsByIngredient']);
 
 Route::get('drinks', [RecipeController::class, 'indexDrinks']);
 Route::get('drinks/no-alcohol', [RecipeController::class, 'nonAlcoholic']);
 Route::get('drinks/with-alcohol', [RecipeController::class, 'alcoholic']);
 Route::get('drinks/{drink:slug}', [RecipeController::class, 'showDrink']);
 Route::get('drinks/search', [RecipeController::class, 'searchDrinkByName']);
+
+Route::post('newsletter', NewsletterController::class);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');

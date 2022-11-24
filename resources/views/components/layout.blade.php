@@ -47,11 +47,22 @@
         <div class="mt-10">
             <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
 
-                <form method="POST" action="#" class="lg:flex text-sm">
+                <form method="POST" action="/newsletter" class="lg:flex text-sm">
+                    @csrf
+
                     <div class="lg:py-3 lg:px-5 flex items-center">
 
-                        <input id="email" type="text" placeholder="Jouw email adres"
-                               class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">
+                        <input
+                            name="email"
+                            id="email"
+                            type="text"
+                            placeholder="Jouw email adres"
+                            class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none"
+                        >
+                        @error('email')
+                            <span class="text-xxs text-red-500">{{ $message }}</span>
+                        @enderror
+
                     </div>
 
                     <button type="submit"
