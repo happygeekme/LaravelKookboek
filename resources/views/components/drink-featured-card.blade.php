@@ -25,7 +25,6 @@
                 </div>
             </header>
 
-
             <footer class="flex justify-between items-center mt-8">
 
                 <div>

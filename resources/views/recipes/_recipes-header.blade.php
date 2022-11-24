@@ -3,12 +3,12 @@
         <span class="text-blue-500">Experius</span> Kookboek
     </h1>
 
-    <h2 class="inline-flex mt-2">Voor en door Experianen </h2>
+    <h2 class="inline-flex mt-2 text-2xl">Recepten</h2>
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
         <!-- Search ingredients -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
-            <form method="GET" action="ingredient/">
+            <form method="GET" action="ingredients/">
                 <input
                     type="text"
                     name="searchIngredient"
@@ -31,6 +31,5 @@
                 >
             </form>
         </div>
-
     </div>
 </header>

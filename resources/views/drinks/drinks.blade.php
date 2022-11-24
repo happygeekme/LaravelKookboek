@@ -1,5 +1,5 @@
 <x-layout>
-    @include('_drinks-header');
+    @include('drinks._drinks-header');
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
         @if (count($drinks) > 0)

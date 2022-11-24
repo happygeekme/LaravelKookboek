@@ -9,7 +9,8 @@ class IngredientController extends Controller
 {
     public function mealsByIngredient()
     {
-        $ingredient = Ingredient::latest()->filter(request(['searchIngredient']));
+        $ingredient = Ingredient::latest();
+        $test = $ingredient->where('name', $_GET['searchIngredient']);
         return view('recipes', [
             'recipes' => $ingredient->recipes
     ]);

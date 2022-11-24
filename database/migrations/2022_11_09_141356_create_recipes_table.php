@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->boolean('validated')->default(0);
             $table->string('title')->unique();
             $table->string('slug')->unique();
             $table->text('instructions');
