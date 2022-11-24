@@ -12,6 +12,7 @@
         <div>
             <a href="/">
                 <img src="/images/experius_logos/experius-logo.png" alt="Experius Logo" width="200" height="16">
+                <span class="text-blue-500 text-3xl m-10">Kookboek</span>
             </a>
         </div>
 

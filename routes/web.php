@@ -22,9 +22,9 @@ Route::get('/', [RecipeController::class, 'getRandom'] );
 
 Route::get('recipes', [RecipeController::class, 'indexMeals'] );
 
-//Route::get('ingredients', [RecipeController::class, 'mealsByIngredient']);
+Route::get('ingredients', [\App\Http\Controllers\IngredientController::class, 'mealsByIngredient']);
 
-Route::get('recipes/{recipe:slug}', [RecipeController::class, 'showMeals']);
+Route::get('recipes/{recipe:slug}', [RecipeController::class, 'showMeal']);
 
 Route::get('drinks', [RecipeController::class, 'indexDrinks']);
 
