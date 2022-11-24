@@ -18,7 +18,6 @@ class RecipeController extends Controller
 
     public function getRandom()
     {
-//        @dd(Recipe::inRandomOrder());
         return view('home.home', [
             'recipe' => Recipe::inRandomOrder()->first(),
             'drink' => $this->drinks->getRandom()[0]
@@ -71,7 +70,6 @@ class RecipeController extends Controller
 
     public function showDrink($slug)
     {
-
         $name = str_replace('-', ' ', $slug);
         return view('drinks.drink', [
             'drink' => $this->drinks->getByName($name)
@@ -80,7 +78,6 @@ class RecipeController extends Controller
 
     public function searchDrinkByName()
     {
-//        @dd($this->drinks->getByName(request(['searchDrink'])));
         return view('drinks.drinks', [
             'drinks' => $this->drinks->getByName(request(['searchDrink']))
         ]);
