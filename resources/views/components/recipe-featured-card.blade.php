@@ -44,7 +44,6 @@
                     <img src="{{ $recipe->user->image }}" alt="user image" width="50px">
                     <div class="ml-3">
                         <h5 class="font-bold">{{ $recipe->user->name }}</h5>
-                        <h6>Experiaan</h6>
                     </div>
                 </div>
 
@@ -52,7 +51,7 @@
                     <a href="/recipes/{{ $recipe->slug }}"
                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
                     >
-                        Read More
+                        Bekijken
                     </a>
                 </div>
             </footer>
