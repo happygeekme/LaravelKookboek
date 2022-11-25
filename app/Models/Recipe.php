@@ -12,6 +12,7 @@ class Recipe extends Model
     {
         if ($filters['search'] ?? false) {
             $query
+                ->where('validated')
                 ->where('title', 'like', '%' . request('searchRecipe') . '%')
                 ->orWhere('instructions', 'like', '%' . request('searchRecipe') . '%')
                 ->orWhere('note', 'like', '%' . request('searchRecipe') . '%');

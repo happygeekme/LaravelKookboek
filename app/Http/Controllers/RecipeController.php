@@ -27,7 +27,8 @@ class RecipeController extends Controller
     public function indexMeals()
     {
         return view('recipes.recipes', [
-           'recipes' => Recipe::latest()->filter(request(['searchRecipe']))->get(),
+           'recipes' => Recipe::latest()
+               ->filter(request(['searchRecipe']))->get(),
         ]);
     }
 
