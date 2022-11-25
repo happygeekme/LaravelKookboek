@@ -10,13 +10,13 @@
         <div class="mt-8 flex flex-col justify-between">
             <header>
                 <div class="space-x-2">
-                    <a href="#"
+                    <span href="#"
                        class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
-                       style="font-size: 10px">Recept</a>
+                       style="font-size: 10px">Recept</span>
 
-                    <a href="#"
+                    <span href="#"
                        class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                       style="font-size: 10px">Gezond</a>
+                       style="font-size: 10px">Gezond</span>
                 </div>
 
                 <div class="mt-4">

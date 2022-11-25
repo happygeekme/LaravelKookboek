@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Nette\Schema\ValidationException;
+use Illuminate\Validation\ValidationException;
 use Exception;
+use App\Service\Newsletter;
 
 class NewsletterController extends Controller
 {

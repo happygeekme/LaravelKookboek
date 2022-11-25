@@ -512,6 +512,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $luuk->id,
+            'validated' => 0,
             'title' => 'Pasta met kipfilet en kruidenkaas',
             'slug' => 'pasta-met-kipfilet-en-kruidenkaas',
             'instructions' =>
@@ -565,6 +566,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $manon->id,
+            'validated' => 1,
             'title' => 'Pasta met spinazie roomsaus',
             'slug' => 'pasta-met-spinazie_roomsaus',
             'instructions' =>
@@ -655,6 +657,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $jitske->id,
+            'validated' => 1,
             'title' => 'Khao Soi Noedelsoep',
             'slug' => 'khao-soi-noedelsoep',
             'instructions' =>
@@ -774,6 +777,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $martijnH->id,
+            'validated' => 1,
             'title' => 'Bonenpuree met paddenstoelensaus',
             'slug' => 'bonenpuree-met-paddenstoelensaus',
             'instructions' =>
@@ -868,6 +872,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $jorik->id,
+            'validated' => 1,
             'title' => 'wraps met kip',
             'slug' => 'wraps-met-kip',
             'instructions' =>
@@ -930,6 +935,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $simoneP->id,
+            'validated' => 1,
             'title' => 'Plaatgroenten met *',
             'slug' => 'plaatgroenten-met-*',
             'instructions' =>
@@ -1046,6 +1052,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $ilseB->id,
+            'validated' => 1,
             'title' => 'Kip met naanbrood, hummus en mangosalsa',
             'slug' => 'kip-met-naanbrood-hummus-en-mangosalsa',
             'instructions' =>
@@ -1157,18 +1164,28 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $pascal->id,
+            'validated' => 1,
             'title' => 'Nacho\'s met groenten en kaas',
             'slug' => 'nachos-met-groenten-en-kaas',
             'instructions' =>
                 '<p>
                     Snijd en kruid de kipfilet
-
+                </p>
+                <p>
                     Verwarm de oven voor op 180 graden
+                </p>
+                <p>
                     Bak de kipfilet aan in een wok
                     Voeg de groenten toe en bak beiden gaar
-                    Vet ondertussen een ovenschaal
+                </P>
+                <p>
+                    Vet ondertussen een ovenschaal in
+                </P>
+                <p>
                     Schep de mix van kipfilet en groenten in de ovenschaal en dek af met nacho’s
                     Voeg de creme fraish en kaas toe
+                </p>
+                <p>
                     Plaats het gerecht in de oven tot de kaas gesmolten is (+=/- 15 minuten)
                 </p>',
             'note' =>
@@ -1256,6 +1273,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $casper->id,
+            'validated' => 1,
             'title' => 'Hartige taart met spinazie en feta',
             'slug' => 'hartige-taart-met-spinazie-en-feta',
             'instructions' =>
@@ -1352,6 +1370,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $geranda->id,
+            'validated' => 1,
             'title' => 'Gnocchi met doperwtenpesto en burrata',
             'slug' => 'gnocchi-met-doperwtenpesto-en-burrata',
             'instructions' =>
@@ -1423,6 +1442,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $annemieke->id,
+            'validated' => 1,
             'title' => 'Spinazietaart met feta',
             'slug' => 'spinazietaart-met-feta',
             'instructions' =>
@@ -1512,6 +1532,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $jordy->id,
+            'validated' => 1,
             'title' => 'Sushibowl met zalmsnippers en gembermayonaise',
             'slug' => 'sushibowl-met-zalmsnippers-en-gembermayonaise',
             'instructions' =>
@@ -1610,6 +1631,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $quinn->id,
+            'validated' => 1,
             'title' => 'Japanse golden curry',
             'slug' => 'japanse-golden-curry',
             'instructions' =>
@@ -1681,6 +1703,7 @@ class DatabaseSeeder extends Seeder
 
         $recipe = Recipe::create([
             'user_id' => $paulD->id,
+            'validated' => 1,
             'title' => 'Chili sin carne',
             'slug' => 'chili-sin-carne',
             'instructions' =>

@@ -6,6 +6,16 @@ use MailchimpMarketing\ApiClient;
 
 class Newsletter
 {
+    public function sendNewMessage()
+    {
+        $response = $this->client()->messages->send(["message" => [
+            'title' => 'test message',
+            'content' => 'blablabla'
+        ]]);
+        print_r($response);
+    }
+
+
     public function subscribe(string $email, string $list = null)
     {
         $list ??= config('services.mailchimp.lists.subscibers');
@@ -24,5 +34,6 @@ class Newsletter
             'server' => 'us18'
         ]);
     }
+
 
 }
