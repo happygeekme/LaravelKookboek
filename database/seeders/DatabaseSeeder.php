@@ -571,17 +571,30 @@ class DatabaseSeeder extends Seeder
             'slug' => 'pasta-met-spinazie_roomsaus',
             'instructions' =>
                     '<p>
-                    1. Kook de pasta volgens de gebruiksaanwijzing op de verpakking.<br>
-                    2. Ondertussen snij je de uien fijn en pers je de knoflook.<br>
-                    3. Verhit de olijfolie (niet te heet) in de pan.<br>
+                    1. Kook de pasta volgens de gebruiksaanwijzing op de verpakking.
+                    </p>
+                    <p>
+                    2. Ondertussen snij je de uien fijn en pers je de knoflook.
+                    </p>
+                    <p>
+                    3. Verhit de olijfolie (niet te heet) in de pan.
+                    </p>
+                    <p>
                     4. Fruit de uien en de knoflook en schep de spinazie al omscheppend er in
                         gedeeltes bij. Als de spinazie is geslonken, schep je de mascarpone er
-                        doorheen. Breng op smaak met zout en peper.<br>
-                    5. Pureer de saus met een staafmixer of blender mooi glad.<br>
-                    6. Schep de pasta op de borden en verdeel de saus er overheen.<br>
+                        doorheen. Breng op smaak met zout en peper.
+                    </p>
+                    <p>
+                    5. Pureer de saus met een staafmixer of blender mooi glad.
+                    </p>
+                    <p>
+                    6. Schep de pasta op de borden en verdeel de saus er overheen.
+                    </p>
+                    <p>
                     7. Garneer met de walnoten en de basilicum en strooi er lekker veel geraspte
-                    (Parmezaanse) kaas overheen.<br>
-                    </p>',
+                    (Parmezaanse) kaas overheen.
+                    </p>
+                    ',
             'note' =>
                     '<P>
                     TIP(S):<br>
@@ -1278,27 +1291,36 @@ class DatabaseSeeder extends Seeder
             'slug' => 'hartige-taart-met-spinazie-en-feta',
             'instructions' =>
                 '<p>
-                    Verder benodigd:
-                    Grote kom
-                    Springvorm (centimetertje of 26 doorsnee)
-                    Garde
-                    Oven (160 C)
+                    <ul>
+                    <li>Verder benodigd:</li>
+                    <li>Grote kom</li>
+                    <li>Springvorm (centimetertje of 26 doorsnee)</li>
+                    <li>Garde</li>
+                    <li>Oven (160 C)</li>
+                    </ul>
 
-
+                    <p>
                     Zet de oven aan op 160 graden.
-
+                    </p>
+                    <p>
                     Verhit een scheutje olie in de pan en fruit de knoflook en ui aan (uiteraard eerst snipperen). Voeg beetje bij beetje de spinazie toe en bak net zo lang totdat het geslonken en (BELANGRIJK) redelijk droog is. Laat daarna iets afkoelen.
-
+                    </p>
+                    <p>
                     Pak een kom en doe hier de eieren in. Klop een beetje los. Voeg de feta (of witte kaas) toe, dit doe je door te verkruimelen in je hand. Voeg ook peper, zout en chili vlokken naar smaak toe en kluts weer door. Hierna een handje oude kaas (geraspt), citroen rasp en sap van halve citroen.
-
+                    </p>
+                    <p>
                     Mix nu de spinazie door het ei / kaas beslag en spatel goed door met een pannenlikker oid.
-
+                    </p>
+                    <p>
                     Vet de springvorm in en bekleed met bladerdeeg. Prik gaatjes in het deeg.
-
+                    </p>
+                    <p>
                     Verdeel de eieren met spinazie over de springvorm en voeg wat cashewnoten toe. Eventueel de gerookte zal OF gebakken panchetta doe in kleine delen.
-
+                    </p>
+                    <p>
                     Doe als laatste kaas over de taart heen en bestrijk de rand van he tdeeg met ei (voor een mooi kleurtje).
-
+                    </p>
+                    <p>
                     doe het minimaal 1 uur in de oven en kijk of hij stevig genoeg is. Indien ja, haal uit de oven en laat 10 minuutjes staan met een (schone) theedoek erover (of aluminium folie maar dat is niet duurzaam).
                 </p>',
             'image' => '/images/recipePics/hartigeTaartMetSpinazieEnFeta.jpg'
@@ -1376,9 +1398,15 @@ class DatabaseSeeder extends Seeder
             'instructions' =>
                 '<p>
                     Breng een ruime pan met gezouten water aan de kook. Kook hierin de doperwten 2 minuten zodat ze net gaar zijn.
+                </p>
+                <p>
                     Haal de doperwten met een schuimspaan uit het water en doe ze in een schaaltje. Prak de doperwten grof en meng met de pesto, het citroensap en de citroenrasp. Zet apart.
+                </p>
+                 <p>
                     Kook de gnocchi in de pan met water tot ze boven beginnen te drijven. Dat is het teken dat ze gaar zijn. Bewaar een beetje van het kookvocht en giet de gnocchi af.
                     Doe de doperwtenpesto in de gnocchipan en voeg een scheutje kookvocht toe. Voeg de gnocchi toe, meng goed en breng op smaak met zwarte peper.
+                 </p>
+                 <p>
                     Verdeel de rucola over een diep bord en leg hierop de gnocchi en burratini. Besprenkel met de olijfolie, zeezout en zwarte peper.
                 </p>',
             'number_of_servings' => 1,
@@ -1448,10 +1476,20 @@ class DatabaseSeeder extends Seeder
             'instructions' =>
                 '<p>
                     Pel en snipper de ui en hak de knoflook fijn. Fruit dit aan in iets olijfolie. Voeg beetje bij beetje de spinazie toe. Totdat deze volledig geslonken is. Breng de spinazie op smaak met peper en zout. Druk het meeste vocht eruit.
+                </p>
+                 <p>
                     Klop in een kom de eieren met de kwark luchtig. Breng dit op smaak met peper en zout. Hak de peterselie en de dille fijn en meng dit door de vulling.
+                 </p>
+                 <p>
                     Neem een vel filodeeg en bestrijk deze met olijfolie (gesmolten boter kan ook). Plak een tweede vel er bovenop. Herhaal deze stappen totdat je 4 lagen hebt. Het is niet erg als het iets scheurt. Verdeel het filodeeg over een ingevette springvorm.
+                 </p>
+                 <p>
                     Verdeel de spinazie over de bodem van de filodeegtaart. Giet de vulling op de spinazie. Verkruimel tenslotte de feta over de spinazietaart. Vouw alle punten van het filodeeg naar binnen en bestrijk de bovenkant lichtjes met olijfolie. Verdeel het sesamzaad over de taart.
+                 </p>
+                 <p>
                     Bak de spinazietaart in ongeveer 30 minuten goudbruin. Wordt hij tussentijds te donker? dek de bovenkant dan af met wat aluminiumfolie.
+                 </p>
+                 <p>
                     Serveer de hartige taart meteen of eet hem koud. Vers is de spinazietaart het lekkerste, maar je kunt hem max. 2 dagen in de koelkast bewaren. Invriezen gaat helaas niet.
                 </p>',
             'number_of_servings' => 4,
@@ -1538,11 +1576,14 @@ class DatabaseSeeder extends Seeder
             'instructions' =>
                 '<p>
                      Breng ruim water aan de kook in een pan met deksel voor de rijst en verkruimel er 1/4 bouillonblokje per persoon boven.Verwijder ondertussen het loof van de radijsjes en snijd ze in kwarten. Snijd de komkommer in kleine blokjes.
-
+                </p>
+                 <p>
                      Meng in een saladekom per persoon 2 el wittewijnazijn en 1 1/2 tl suiker met een snuf zout. Meng de komkommer en radijs erdoor. Zet opzij en schep regelmatig om.Voeg de risottorijst toe aan de pan met deksel en kook, afgedekt, in 12 – 15 minuten gaar. Giet daarna af in een vergiet en spoel af met lauw water. Laat daarna uitlekken.
-
+                 </p>
+                 <p>
                      Snijd ondertussen de avocado doormidden, verwijder de pit en schil en snijd het vruchtvlees in dunne plakjes.Rasp de gember fijn.Meng in een kleine kom de mayonaise met de geraspte gember.
-
+                 </p>
+                 <p>
                      Verdeel de rijst over grote kommen en garneer deze met de gomasio.Leg hiernaast de zoetzure radijsjes en komkommer, de zalmsnippers en de plakjes avocado.Schep een lepel gembermayonaise in het midden en serveer de sojasaus erbij.
                 </p>',
             'number_of_servings' => 2,
@@ -1637,11 +1678,17 @@ class DatabaseSeeder extends Seeder
             'instructions' =>
                 '<p>
                     Bereid de rijst zoals je gewend bent.
+                </p>
+                <p>
                     Snipper de ui, snijd de wortel aardappel en kip in kleine blokjes (3 a 4cm)
+                </p>
+                <p>
                     Verhit olie in een wok, wanneer deze goed warm is voeg dan de kip toe en bak deze tot goudbruin.
                     Voeg dan de ui, wortel en aardappel toe en bak deze ongeveer 3 a 4 minuten mee op middelhoog vuur.
                     Voeg het water toe, en laat de ingredienten voor ongeveer 15 minuten koken op middel vuur.
                     Voeg de curry mix toe, roer deze goed door en laat dit op laag vuur meekoken voor 5 minuten.
+                </p>
+                <p>
                     Serveer in een kom met de rijst die in stap 1 gekookt is.
                 </p>',
 
@@ -1708,24 +1755,31 @@ class DatabaseSeeder extends Seeder
             'slug' => 'chili-sin-carne',
             'instructions' =>
                 '<p>
-                    1. Bak je Jalapeño burgers volgens de verpakking. Haal deze uit de pan en snijd ze vervolgens in kleine stukken. Indien je ongekruide vleesvervangers gebruikt, breng ze een beetje op smaak met wat zout en zwarte peper. Zet het ‘vlees’ apart voor later.
+                    <ol>
+                        <li>1. Bak je Jalapeño burgers volgens de verpakking. Haal deze uit de pan en snijd ze vervolgens in kleine stukken. Indien je ongekruide vleesvervangers gebruikt, breng ze een beetje op smaak met wat zout en zwarte peper. Zet het ‘vlees’ apart voor later.</li>
 
-                    2. Kook ondertussen je rijst volgens de verpakking.
+                        <li>2. Kook ondertussen je rijst volgens de verpakking.</li>
 
-                    3. Verwarm een (braad)pan met olie/bakvet naar keuze. Versnipper de rode uien en doe deze samen met de tomatenpuree in de pan. Terwijl deze liggen te fruiten snijd je ook de knoflook en het pepertje en voeg je deze toe aan de pan, beter haal je de zaadjes er niet uit =)
+                        <li>3. Verwarm een (braad)pan met olie/bakvet naar keuze. Versnipper de rode uien en doe deze samen met de tomatenpuree in de pan. Terwijl deze liggen te fruiten snijd je ook de knoflook en het pepertje en voeg je deze toe aan de pan, beter haal je de zaadjes er niet uit =)</li>
 
-                    4. Snij de prei en voeg deze toe aan de pan, doe ook de oregano, komijn en paprikapoeder bij het mengsel. Voeg de twee blikken gepelde tomaten toe, even roeren tot een geheel.
+                        <li>4. Snij de prei en voeg deze toe aan de pan, doe ook de oregano, komijn en paprikapoeder bij het mengsel. Voeg de twee blikken gepelde tomaten toe, even roeren tot een geheel.</li>
 
-                    5. Snijdt je paprika’s en tomaten in blokjes en voeg deze toe aan de pan, voeg na een minuutje ook de kidneybonen, bruine bonen, mais en kapucijners toe. Roer het geheel goed door en laat dit 10 minuutjes pruttelen.
+                        <li>5. Snijdt je paprika’s en tomaten in blokjes en voeg deze toe aan de pan, voeg na een minuutje ook de kidneybonen, bruine bonen, mais en kapucijners toe. Roer het geheel goed door en laat dit 10 minuutjes pruttelen.</li>
 
-                    6. Voeg het ‘vlees’ toe aan het geheel, roer dit goed door. Voeg naar smaak zout en de chipotle saus toe. Garneer eventueel met wat blaadjes koriander.
+                        <li>6. Voeg het ‘vlees’ toe aan het geheel, roer dit goed door. Voeg naar smaak zout en de chipotle saus toe. Garneer eventueel met wat blaadjes koriander.</li>
+                    </ol>
                 </p>',
             'note' =>
                 '<p>
                     Variatie tips:
-
+                </P>
+                <p>
                     Je kunt de chili ook met rundergehakt maken. Dit hoef je tussendoor niet uit de pan te halen.
+                </P>
+                <p>
                     Wie meer zin heeft in comfortfood kan de rijst vervangen met nacho chips, dan kun je de chili lekker scheppen. Als je het helemaal af wilt maken doe je er nog wat Crème fraîche erbij ook.
+                </P>
+                <p>
                     Je kunt de Chili Sin Carne (zonder rijst) ook in een wrap eten, eventueel met avocado en wat kaas.
                 </p>',
             'number_of_servings' => 4,

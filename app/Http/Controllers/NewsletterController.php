@@ -4,25 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Validation\ValidationException;
 use Exception;
-use App\Service\Newsletter;
+use App\Mail\Newsletter;
 
 class NewsletterController extends Controller
 {
-    public function __invoke(Newsletter $newsletter)
+    public function subscribe()
     {
-        {
-            request()->validate(['email' => 'required|email']);
+        request()->validate(['email' => 'required|email']);
 
-            try {
-                $newsletter->subscribe(request('email'));
-            } catch (Exception $e) {
-                throw ValidationException::withMessages([
-                    'email' => 'Dit email adres kan niet worden toegevoegd aan onze lijst.'
-                ]);
-            }
+        try {
+            Newsletter::create([
+                'email' => request('email')
+            ]);
 
-            return redirect('/')
-                ->with('success', 'You are now signed up for our newsletter!');
+        } catch (Exception $e) {
+            throw ValidationException::withMessages([
+                'email' => 'Dit email adres kan niet worden toegevoegd aan onze lijst.'
+            ]);
         }
+
+        return redirect('/')
+            ->with('success', 'Je bent nu aangemeld voor onze nieuwsbrief!');
     }
+
 }

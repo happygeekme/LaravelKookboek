@@ -30,7 +30,7 @@ Route::get('drinks/with-alcohol', [RecipeController::class, 'alcoholic']);
 Route::get('drinks/{drink:slug}', [RecipeController::class, 'showDrink']);
 Route::get('drinks/search', [RecipeController::class, 'searchDrinkByName']);
 
-Route::post('newsletter', NewsletterController::class);
+Route::post('newsletter', [NewsletterController::class, 'subscribe']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
