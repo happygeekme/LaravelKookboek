@@ -5,7 +5,8 @@ use \App\Http\Controllers\RecipeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\IngredientController;
-use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\MailinglistController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('drinks/with-alcohol', [RecipeController::class, 'alcoholic']);
 Route::get('drinks/{drink:slug}', [RecipeController::class, 'showDrink']);
 Route::get('drinks/search', [RecipeController::class, 'searchDrinkByName']);
 
-Route::post('newsletter', [NewsletterController::class, 'subscribe']);
+Route::post('newsletter', [MailinglistController::class, 'subscribe']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
@@ -40,4 +41,5 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::get('/send-recipe', [RecipeController::class, 'create'])->middleware('auth');
+Route::get('send-recipe', [RecipeController::class, 'create'])->middleware('auth');
+

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('newsletter', function (Blueprint $table) {
+        Schema::create('mailinglists', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('email')->unique();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newsletter');
+        Schema::dropIfExists('mailinglists');
     }
 };

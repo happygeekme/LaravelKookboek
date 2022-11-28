@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('mailgun', 'smtp'),
+    'default' => env('MAIL_MAILER', 'failover'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,6 +51,9 @@ return [
 
         'mailgun' => [
             'transport' => 'mailgun',
+            'domain' => env('MAILGUN_DOMAIN'),
+            'secret' => env('MAILGUN_SECRET'),
+            'endpoint' => env('MAILGUN_ENDPOINT', 'api.eu.mailgun.net')
         ],
 
         'postmark' => [
@@ -74,8 +77,7 @@ return [
         'failover' => [
             'transport' => 'failover',
             'mailers' => [
-                'smtp',
-                'log',
+                'mailgun',
             ],
         ],
     ],
@@ -92,8 +94,13 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'jitske.arends@experius.nl'),
+        'name' => env('MAIL_FROM_NAME', 'Experius Kookboek'),
+    ],
+
+    'reply_to' => [
+        'address' => 'jitske.arends@experius.nl',
+        'name' => 'Experius Kookboek'
     ],
 
     /*

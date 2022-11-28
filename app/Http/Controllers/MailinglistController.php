@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Validation\ValidationException;
 use Exception;
-use App\Mail\Newsletter;
+use App\Models\Mailinglist;
 
-class NewsletterController extends Controller
+class MailinglistController extends Controller
 {
     public function subscribe()
     {
         request()->validate(['email' => 'required|email']);
 
         try {
-            Newsletter::create([
+            Mailinglist::create([
                 'email' => request('email')
             ]);
 
