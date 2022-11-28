@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ingredients', function (Blueprint $table) {
+        Schema::create('mailinglists', function (Blueprint $table) {
             $table->id();
-            $table->boolean('validated')->default(0);
-            $table->string('name')->unique();
-            $table->date('updated_at');
-            $table->date('created_at');
+            $table->timestamps();
+            $table->string('email')->unique();
         });
-
-
-
     }
 
     /**
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ingredients');
+        Schema::dropIfExists('mailinglists');
     }
 };

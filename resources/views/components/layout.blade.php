@@ -59,9 +59,6 @@
                             placeholder="Jouw email adres"
                             class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none"
                         >
-                        @error('email')
-                            <span class="text-xxs text-red-500">{{ $message }}</span>
-                        @enderror
 
                     </div>
 
@@ -81,5 +78,10 @@
         <p>{{ session()->get('success') }}</p>
     </div>
 @endif
+@error('email')
+    <div class="fixed bg-red-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
+        <p>{{ $message }}</p>
+    </div>
+@enderror
 </body>
 
