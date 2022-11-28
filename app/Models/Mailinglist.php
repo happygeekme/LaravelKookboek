@@ -9,4 +9,9 @@ class Mailinglist extends Model
 {
     protected $fillable = ['email'];
 
+    public function getList()
+    {
+
+    }
+
 }

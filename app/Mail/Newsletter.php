@@ -23,22 +23,14 @@ class Newsletter extends Mailable
      *
      * @return void
      */
-    public function __construct(Recipe $recipe)
-    {
-        $this->recipe = $recipe;
-    }
-
-
 
 
     public function build()
     {
         return $this->from('jitske.arends@experius.com', 'Experius Kookboek')
-                    ->view('emails.newsletter')
-                    ->with([
-                        'recipe' => $this->recipe,
-                    ]);
+            ->view('mail.newsletter');
     }
+
 
     /**
      * Get the message envelope.
@@ -60,7 +52,7 @@ class Newsletter extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.mail.newsletter',
+            view: 'mail.newsletter',
         );
     }
 

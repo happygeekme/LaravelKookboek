@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Newsletter;
 use Illuminate\Validation\ValidationException;
 use Exception;
 use App\Models\Mailinglist;
+use Illuminate\Support\Facades\Mail;
+
 
 class MailinglistController extends Controller
 {
@@ -23,8 +26,17 @@ class MailinglistController extends Controller
             ]);
         }
 
+        $this->sendEmail(request('email'));
+
         return redirect('/')
             ->with('success', 'Je bent nu aangemeld voor onze nieuwsbrief!');
+
     }
+
+    public function sendEmail($email)
+    {
+        Mail::to($email)->send(new Newsletter());
+    }
+
 
 }
