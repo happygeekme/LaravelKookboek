@@ -9,7 +9,6 @@ use Illuminate\Support\Arr;
 
 class RecipeController extends Controller
 {
-
     public function __construct(
         protected CocktailApi $drinks
     )
@@ -39,11 +38,10 @@ class RecipeController extends Controller
         ]);
     }
 
-    protected function create()
+    protected function new()
     {
-        return view('recipes.create', [
-            'ingredients' => Ingredient::all()
-        ]);
+        $recipe = new Recipe();
+        $recipe->title = request('title');
     }
 
     public function indexDrinks()
