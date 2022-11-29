@@ -41,7 +41,9 @@ class RecipeController extends Controller
 
     protected function create()
     {
-        return view('recipes.create');
+        return view('recipes.create', [
+            'ingredients' => Ingredient::all()
+        ]);
     }
 
     public function indexDrinks()

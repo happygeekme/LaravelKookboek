@@ -8,6 +8,7 @@ use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\MailinglistController;
 use App\Http\Resources\RecipeResource;
 use App\Models\Recipe;
+use App\Http\Controllers\RecipeFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,7 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::get('send-recipe', [RecipeController::class, 'create'])->middleware('auth');
+Route::post('form-add-ingredient', [RecipeFormController::class, 'add']);
 
 // API ENDPOINT ROUTES
 Route::get('api/recipe/{id}', function ($id) {
