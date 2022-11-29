@@ -6,7 +6,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\MailinglistController;
-
+use App\Http\Resources\RecipeResource;
+use App\Models\Recipe;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,15 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::get('send-recipe', [RecipeController::class, 'create'])->middleware('auth');
+
+// API ENDPOINT ROUTES
+Route::get('api/recipe/{id}', function ($id) {
+    return (new RecipeResource(Recipe::findOrFail($id)))
+        ->response()
+        ->header('X-Value', 'True');
+});
+
+Route::get('api/recipes', function () {
+    return RecipeResource::collection(Recipe::all());
+});
 
