@@ -21,6 +21,12 @@
                style="font-size: 15px">
                 Met Alcohol
             </a>
+            <!--toch liever iets eten -->
+            <a href="/recipes"
+               class="px-5 py-3 border border-blue-500 rounded-full text-blue-500 text-xs uppercase font-semibold"
+               style="font-size: 15px">
+                Toch liever iets eten
+            </a>
 
         </div>
     </div>
