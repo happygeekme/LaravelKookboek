@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Recipe;
 use App\Service\CocktailApi;
 use App\Models\Ingredient;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 
 
 class RecipeController extends Controller
@@ -26,8 +28,8 @@ class RecipeController extends Controller
     public function indexMeals()
     {
         return view('recipes.recipes', [
-           'recipes' => Recipe::latest()
-               ->filter(request(['searchRecipe']))->get(),
+            'recipes' => Recipe::latest()
+                ->filter(request(['searchRecipe']))->get(),
         ]);
     }
 
@@ -38,10 +40,52 @@ class RecipeController extends Controller
         ]);
     }
 
-    protected function new()
+    public function sendRecipeFrom()
     {
-        $recipe = new Recipe();
-        $recipe->title = request('title');
+        return view('recipes.create', [
+            'ingredients' => Ingredient::all()
+        ]);
+    }
+
+    protected function store()
+    {
+        $recipe = Recipe::create([
+            'user_id' => Auth::user()->id,
+            'title' => request('title'),
+            'slug' =>   strtolower(str_replace(' ', '-', request('title'))),
+            'instructions' => request('instructions'),
+            'number_of_servings' => request('number_of_servings'),
+            'note' => request('note'),
+            'validated' => false,
+            ]);
+
+        for($i = 1; $i <= 10; $i ++) {
+            if(request('ingredient' . str($i) !== "Selecteer Ingredient") && request('ingredient' . str($i) !== null)) {
+                $recipe->ingredients()->attach($recipe->id, [
+                   'ingredient_id' =>  request('ingredient' . str($i)),
+                    'measurement' => request('measurementIngredient' . str($i)),
+                    'amount' => request('amountIngredient' . str($i))
+                ]);
+            }
+        }
+
+        for($i = 11; $i <= 15; $i ++) {
+            if(request('ingredient' . str($i) != null) && request('ingredient' . str($i) != '')) {
+                $ingredient = Ingredient::create([
+                    'name' => request('nameIngredient' . str($i))
+                ]);
+
+                $recipe->ingredients()->attach($recipe->id, [
+                    'ingredient_id' =>  $ingredient->id,
+                    'measurement' => request('measurementIngredient' . str($i)),
+                    'amount' => request('amountIngredient' . str($i))
+                ]);
+            }
+        }
+
+        session()->flash('success', 'Bedankt! Je recept is ingestuurd');
+
+        return redirect('/');
     }
 
     public function indexDrinks()

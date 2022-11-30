@@ -43,7 +43,8 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::post('send-recipe', [RecipeController::class, 'new'])->middleware('auth');
+Route::get('send-recipe-form', [RecipeController::class, 'sendRecipeFrom'])->middleware('auth');
+Route::post('send-recipe', [RecipeController::class, 'store'])->middleware('auth');
 
 // API ENDPOINT ROUTES
 Route::get('api/recipe/{id}', function ($id) {

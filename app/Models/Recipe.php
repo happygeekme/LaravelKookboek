@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
+    protected $fillable = ['user_id', 'title', 'instructions', 'number_of_servings', 'note', 'slug'];
 
     public function scopeFilter($query, array $filters)
     {
