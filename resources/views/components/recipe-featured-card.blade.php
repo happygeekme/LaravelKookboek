@@ -3,11 +3,12 @@
 <article
     class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
     <div class="py-6 px-5">
-        <div>
-            <img src="{{ $recipe->image }}" alt="Recipe image" class="rounded-xl">
+        <div class="content-center">
+            <img src="{{ $recipe->image }}" alt="Recipe image" class="rounded-xl object-cover h-50 w-100">
         </div>
 
         <div class="mt-8 flex flex-col justify-between">
+
             <header>
                 <div class="space-x-2">
                     <span href="#"
