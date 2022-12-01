@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('number_of_servings')->nullable();
             $table->date('updated_at');
             $table->date('created_at');
-            $table->string('image')->nullable();
+            $table->string('image')->default('/images/recipePics/defaultRecipeImage');
             $table->string('link')->nullable();
 
         });

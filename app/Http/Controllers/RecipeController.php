@@ -20,7 +20,9 @@ class RecipeController extends Controller
     public function getRandom()
     {
         return view('home.home', [
-            'recipe' => Recipe::inRandomOrder()->first(),
+            'recipe' => Recipe::inRandomOrder()
+                ->where('validated', true)
+                ->first(),
             'drink' => $this->drinks->getRandom()[0]
         ]);
     }
@@ -29,9 +31,12 @@ class RecipeController extends Controller
     {
         return view('recipes.recipes', [
             'recipes' => Recipe::latest()
+                ->where('validated', true)
                 ->filter(request(['searchRecipe']))->get(),
         ]);
     }
+
+
 
     public function showMeal(Recipe $recipe)
     {
@@ -40,7 +45,8 @@ class RecipeController extends Controller
         ]);
     }
 
-    public function sendRecipeFrom()
+
+    public function sendRecipeForm()
     {
         return view('recipes.create', [
             'ingredients' => Ingredient::all()
@@ -56,11 +62,13 @@ class RecipeController extends Controller
             'instructions' => request('instructions'),
             'number_of_servings' => request('number_of_servings'),
             'note' => request('note'),
+            'image' => request()->file('image')->store('public/recipePics'),
             'validated' => false,
             ]);
 
-        for($i = 1; $i <= 10; $i ++) {
-            if(request('ingredient' . str($i) !== "Selecteer Ingredient") && request('ingredient' . str($i) !== null)) {
+        for($i = 1; $i < 10; $i ++) {
+            if(request('ingredient' . str($i)) != null && request('ingredient' . str($i)) != 'Selecteer Ingredient') {
+
                 $recipe->ingredients()->attach($recipe->id, [
                    'ingredient_id' =>  request('ingredient' . str($i)),
                     'measurement' => request('measurementIngredient' . str($i)),
@@ -69,10 +77,11 @@ class RecipeController extends Controller
             }
         }
 
-        for($i = 11; $i <= 15; $i ++) {
-            if(request('ingredient' . str($i) != null) && request('ingredient' . str($i) != '')) {
+        for($i = 11; $i < 15; $i ++) {
+            if(request('ingredient' . str($i)) != null){
+
                 $ingredient = Ingredient::create([
-                    'name' => request('nameIngredient' . str($i))
+                    'name' => request('ingredient' . str($i))
                 ]);
 
                 $recipe->ingredients()->attach($recipe->id, [
@@ -84,7 +93,6 @@ class RecipeController extends Controller
         }
 
         session()->flash('success', 'Bedankt! Je recept is ingestuurd');
-
         return redirect('/');
     }
 

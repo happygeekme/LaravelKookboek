@@ -2,7 +2,7 @@
     class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
     <div class="py-6 px-5">
         <div>
-            <img src="{{ $recipe->image }}" alt="Recipe image" class="rounded-xl object-cover h-48 w-96">
+            <img src="{{ asset($recipe->image) }}" alt="Recipe image" class="rounded-xl object-cover h-48 w-96">
         </div>
 
         <div class="mt-8 flex flex-col justify-between">

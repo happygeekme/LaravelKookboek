@@ -3,7 +3,7 @@
         <main class="max-w-fit mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
             <h1 class="text-center font-bold text-xl">Stuur hier je recept in</h1>
 
-            <form method="POST" action="/send-recipe" class="mt-10">
+            <form method="POST" action="/send-recipe" class="mt-10" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-6">
@@ -45,7 +45,7 @@
 
                         <div class="inline-block">
                             <select name="ingredient1" id="ingredient1">
-                                <option>Selecteer Ingredient</option>
+                                <option id="null" value="null">Selecteer Ingredient</option>
                                 @foreach($ingredients as $ingredient)
                                     {
                                     <option id="{{$ingredient->id}}"
@@ -470,9 +470,9 @@
 
                             <input class="border border-gray-400 p-2"
                                    type="text"
-                                   name="nameIngredient11"
-                                   id="nameIngredient11"
-                                   value="{{ old('nameIngredient11') }}"
+                                   name="ingredient11"
+                                   id="ingredient11"
+                                   value="{{ old('ingredient11') }}"
                             >
                         </div>
                     </div>
@@ -515,9 +515,9 @@
 
                             <input class="border border-gray-400 p-2"
                                    type="text"
-                                   name="nameIngredient12"
-                                   id="nameIngredient12"
-                                   value="{{ old('nameIngredient12') }}"
+                                   name="ingredient12"
+                                   id="ingredient12"
+                                   value="{{ old('ingredient12') }}"
                             >
                         </div>
                     </div>
@@ -560,9 +560,9 @@
 
                             <input class="border border-gray-400 p-2"
                                    type="text"
-                                   name="nameIngredient13"
-                                   id="nameIngredient13"
-                                   value="{{ old('nameIngredient13') }}"
+                                   name="ingredient13"
+                                   id="ingredient13"
+                                   value="{{ old('ingredient13') }}"
                             >
                         </div>
                     </div>
@@ -605,9 +605,9 @@
 
                             <input class="border border-gray-400 p-2"
                                    type="text"
-                                   name="nameIngredient14"
-                                   id="nameIngredient14"
-                                   value="{{ old('nameIngredient14') }}"
+                                   name="ingredient14"
+                                   id="ingredient14"
+                                   value="{{ old('ingredient14') }}"
                             >
                         </div>
                     </div>
@@ -650,9 +650,9 @@
 
                             <input class="border border-gray-400 p-2"
                                    type="text"
-                                   name="nameIngredient14"
-                                   id="nameIngredient14"
-                                   value="{{ old('nameIngredient14') }}"
+                                   name="ingredient14"
+                                   id="ingredient14"
+                                   value="{{ old('ingredient14') }}"
                             >
                         </div>
                     </div>
@@ -691,7 +691,6 @@
                            type="number"
                            name="number_of_servings"
                            id="number_of_servings"
-                           required
                     >
 
                     @error('number_of_servings')
@@ -711,7 +710,6 @@
                            name="note"
                            id="note"
                            value="{{ old('note_user') }}"
-                           required
                     >
 
                     @error('note')
@@ -729,13 +727,26 @@
                     <textarea class="border border-gray-400 p-2 w-full h-40"
                               name="instructions"
                               id="instructions"
-                              value="{{ old('instructions') }}"
                               required
                     ></textarea>
 
                     @error('instructions')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
+                </div>
+                <div>
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="image"
+                    >
+                        Afbeelding
+                    </label>
+                    <input class="border border-gray-400 p-2 w-full"
+                           type="file"
+                           name="image"
+                           id="image"
+                           value="{{ old('image') }}"
+                           required
+                    >
                 </div>
 
                 <div class="mb-6">

@@ -8,7 +8,7 @@ use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\MailinglistController;
 use App\Http\Resources\RecipeResource;
 use App\Models\Recipe;
-use App\Http\Controllers\RecipeFormController;
+use App\Http\Controllers\AdminRecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +43,12 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::get('send-recipe-form', [RecipeController::class, 'sendRecipeFrom'])->middleware('auth');
+Route::get('send-recipe-form', [RecipeController::class, 'sendRecipeForm'])->middleware('auth');
 Route::post('send-recipe', [RecipeController::class, 'store'])->middleware('auth');
+
+Route::get('admin/dashboard', [AdminRecipeController::class, 'unvalidated'])->middleware('admin');
+Route::get('/admin/recipes/{recipe}/edit', [AdminRecipeController::class, 'edit'])->middleware('admin');
+Route::patch('/admin/recipes/{recipe}', [AdminRecipeController::class, 'update'])->middleware('admin');
 
 // API ENDPOINT ROUTES
 Route::get('api/recipe/{id}', function ($id) {
