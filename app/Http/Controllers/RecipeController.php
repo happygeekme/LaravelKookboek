@@ -24,6 +24,19 @@ class RecipeController extends Controller
         ]);
     }
 
+    public function search(Request $request) {
+        $search = $request->input('search');
+        $recipes = Recipe::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('instructions', 'LIKE', "%{$search}%")
+            ->orWhere('note', 'LIKE', "%{$search}%" )
+            ->get();
+
+        return view('recipes.recipes', [
+            'recipes' => $recipes
+        ]);
+    }
+
     public function indexMeals()
     {
         return view('recipes.recipes', [

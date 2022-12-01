@@ -23,6 +23,7 @@ Route::get('/', [RecipeController::class, 'getRandom'] );
 
 Route::get('recipes', [RecipeController::class, 'indexMeals'] );
 Route::get('recipes/{recipe:slug}', [RecipeController::class, 'showMeal']);
+Route::get('recipes/search', [RecipeController::class, 'search']);
 
 Route::get('ingredients', [IngredientController::class, 'mealsByIngredient']);
 

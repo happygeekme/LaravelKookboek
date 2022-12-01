@@ -1,4 +1,4 @@
-<header class="max-w-xl mx-auto mt-20 text-center">
+<header class="max-w-xl mx-auto mt-10 text-center">
     <h1 class="text-4xl">
         <span class="text-blue-500">Experius</span> Kookboek
     </h1>
@@ -7,7 +7,7 @@
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
         <!-- Search ingredients -->
-        <div class="px-5 py-3 border border-blue-500 rounded-full text-blue-500 text-xs uppercase font-semibold inline-block">
+        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
             <form method="GET" action="ingredients/">
                 <input
                     type="text"
@@ -20,8 +20,8 @@
         </div>
 
         <!-- Search recipes -->
-        <div class="px-5 py-3 border border-blue-500 rounded-full text-xs uppercase font-semibold inline-block">
-            <form method="GET" action="#">
+        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
+            <form method="GET" action="/recipes/search">
                 <input
                     type="text"
                     name="searchRecipe"
