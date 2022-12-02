@@ -17,8 +17,8 @@
         </div>
 
 
+        <div class="mt-8 md:mt-0 flex items-center">
 
-        <div class="mt-8 md:mt-0 flex items-center" >
             @auth
                 <span class="text-xs font-bold uppercase">Welkom, {{ auth()->user()->name }}!</span>
 
@@ -27,13 +27,15 @@
                     <button type="submit">Log uit</button>
                 </form>
 
-                <a href="/send-recipe" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                <a href="/send-recipe-form"
+                   class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     Recept insturen
                 </a>
             @else
                 <a href="/register" class="text-xs font-bold uppercase">Account aanmaken</a>
 
-                <a href="/login" class="bg-blue-500 ml-3 px-10 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                <a href="/login"
+                   class="bg-blue-500 ml-3 px-10 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     Log in
                 </a>
             @endguest
@@ -76,14 +78,14 @@
 </section>
 
 @if (session()->has('success'))
-    <div class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
+    <div class="fixed bg-green-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
         <p>{{ session()->get('success') }}</p>
     </div>
 @endif
 @error('email')
-    <div class="fixed bg-red-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
-        <p>{{ $message }}</p>
-    </div>
+<div class="fixed bg-red-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
+    <p>{{ $message }}</p>
+</div>
 @enderror
 </body>
 

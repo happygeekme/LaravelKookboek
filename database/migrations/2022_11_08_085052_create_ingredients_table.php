@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
-            $table->boolean('validated')->default(0);
             $table->string('name')->unique();
             $table->date('updated_at');
             $table->date('created_at');

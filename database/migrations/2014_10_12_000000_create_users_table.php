@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->string('image')->default('/images/userPics/defaultPic.png');
-            $table->integer('auth_level')->default('0');
+            $table->boolean('administrator')->default(false);
             $table->boolean('activated')->default(false);
             $table->rememberToken();
             $table->timestamps();

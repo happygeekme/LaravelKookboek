@@ -18,8 +18,8 @@ class SessionsController extends Controller
         ]);
 
         if (auth()->attempt($attributes)) {
-            session()->regenerate();
 
+            session()->regenerate();
             return redirect('/')->with('success', 'Welkom Terug!');
         }
 
