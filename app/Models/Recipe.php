@@ -11,7 +11,7 @@ class Recipe extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        if ($filters['search'] ?? false) {
+        if (isset($filters['searchRecipe'])) {
             $query
                 ->where('validated')
                 ->where('title', 'like', '%' . request('searchRecipe') . '%')

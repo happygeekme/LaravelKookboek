@@ -24,7 +24,6 @@ Route::get('/', [RecipeController::class, 'getRandom'] );
 
 Route::get('recipes', [RecipeController::class, 'indexMeals'] );
 Route::get('recipes/{recipe:slug}', [RecipeController::class, 'showMeal']);
-Route::get('recipes/search', [RecipeController::class, 'search']);
 
 Route::get('ingredients', [IngredientController::class, 'mealsByIngredient']);
 
@@ -32,7 +31,6 @@ Route::get('drinks', [RecipeController::class, 'indexDrinks']);
 Route::get('drinks/no-alcohol', [RecipeController::class, 'nonAlcoholic']);
 Route::get('drinks/with-alcohol', [RecipeController::class, 'alcoholic']);
 Route::get('drinks/{drink:slug}', [RecipeController::class, 'showDrink']);
-Route::get('drinks/search', [RecipeController::class, 'searchDrinkByName']);
 
 Route::post('newsletter', [MailinglistController::class, 'subscribe']);
 
