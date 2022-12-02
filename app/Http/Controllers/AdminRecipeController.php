@@ -37,13 +37,14 @@ class AdminRecipeController extends Controller
             'note' => request('note'),
             'validated' => false,
         ]);
-        
+
         return redirect('admin/dashboard')->with('success', 'Recept geupdate!');
     }
 
     public function approve(Recipe $recipe)
     {
-        $recipe->updated(['validated' => 1]);
+        $recipe->validated = true;
+        $recipe->save();
 
         return redirect('admin/dashboard')->with('success', 'Recept goedgekeurd!');
     }
