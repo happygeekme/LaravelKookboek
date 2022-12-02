@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->boolean('validated')->default(0);
+            $table->boolean('validated')->default(false);
             $table->string('title')->unique();
             $table->string('slug')->unique();
             $table->text('instructions');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('number_of_servings')->nullable();
             $table->date('updated_at');
             $table->date('created_at');
-            $table->string('image')->nullable();
+            $table->string('image')->default('/images/recipePics/defaultRecipeImage');
             $table->string('link')->nullable();
 
         });
