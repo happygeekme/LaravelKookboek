@@ -49,6 +49,7 @@ Route::post('send-recipe', [RecipeController::class, 'store'])->middleware('auth
 Route::get('admin/dashboard', [AdminRecipeController::class, 'unvalidated'])->middleware('admin');
 Route::get('/admin/recipes/{recipe}/edit', [AdminRecipeController::class, 'edit'])->middleware('admin');
 Route::patch('/admin/recipes/{recipe}', [AdminRecipeController::class, 'update'])->middleware('admin');
+Route::patch('/admin/recipes/approve/{recipe}', [AdminRecipeController::class, 'approve'])->middleware('admin');
 
 // API ENDPOINT ROUTES
 Route::get('api/recipe/{id}', function ($id) {

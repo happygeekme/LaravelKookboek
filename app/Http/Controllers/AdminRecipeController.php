@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ingredient;
 use App\Models\Recipe;
 use Illuminate\Validation\Rule;
+use \Illuminate\Http\Request;
 
 class AdminRecipeController extends Controller
 {
@@ -18,28 +20,40 @@ class AdminRecipeController extends Controller
 
     public function edit(Recipe $recipe)
     {
-        return view('admin.recipes.edit', ['recipe' => $recipe]);
+        return view('admin.recipes.edit', [
+            'recipe' => $recipe,
+            'ingredients' => $recipe->ingredients,
+            'allIngredients' => Ingredient::all()
+        ]);
     }
 
     public function update(Recipe $recipe)
     {
-        $attributes =  request()->validate([
-            'title' => 'required',
-            'slug' =>   ['required', Rule::unique('recipes', 'slug')->ignore($recipe->id)],
-            'instructions' => 'required',
-            'number_of_servings' => 'number',
-            'note' => 'string',
-            'image' => 'image',
-            'validated' => true,
+        $recipe->update([
+            'title' => request('title'),
+            'slug' =>   strtolower(str_replace(' ', '-', request('title'))),
+            'instructions' => request('instructions'),
+            'number_of_servings' => request('number_of_servings'),
+            'note' => request('note'),
+//            'image' => request()->file('image')->store('public/recipePics'),
+            'validated' => false,
         ]);
 
-        if(isset($attributes['image'])) {
-            $attributes['image'] = request()->file('image')->store('recipePics');
-        }
 
-        $recipe->update($attributes);
+//        if(isset($recipe['image'])) {
+//            $recipe['image'] = request()->file('image')->store('recipePics');
+//        }
 
-        return back()->with('succes', 'Recept geupdate!');
+
+        return redirect('admin/dashboard')->with('success', 'Recept geupdate!');
+    }
+
+    public function approve(Recipe $recipe)
+    {
+        @dd($recipe);
+        $recipe->update(['validated' => true]);
+
+        return redirect('admin/dashboard')->with('success', 'Recept goedgekeurd!');
     }
 
 }
