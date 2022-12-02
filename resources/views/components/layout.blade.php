@@ -16,7 +16,9 @@
             </a>
         </div>
 
+
         <div class="mt-8 md:mt-0 flex items-center">
+
             @auth
                 <span class="text-xs font-bold uppercase">Welkom, {{ auth()->user()->name }}!</span>
 
