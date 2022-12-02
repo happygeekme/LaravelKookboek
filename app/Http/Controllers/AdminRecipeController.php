@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Ingredient;
 use App\Models\Recipe;
-use Illuminate\Validation\Rule;
-use \Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class AdminRecipeController extends Controller
 {
@@ -35,23 +35,15 @@ class AdminRecipeController extends Controller
             'instructions' => request('instructions'),
             'number_of_servings' => request('number_of_servings'),
             'note' => request('note'),
-//            'image' => request()->file('image')->store('public/recipePics'),
             'validated' => false,
         ]);
-
-
-//        if(isset($recipe['image'])) {
-//            $recipe['image'] = request()->file('image')->store('recipePics');
-//        }
-
-
+        
         return redirect('admin/dashboard')->with('success', 'Recept geupdate!');
     }
 
     public function approve(Recipe $recipe)
     {
-        @dd($recipe);
-        $recipe->update(['validated' => true]);
+        $recipe->updated(['validated' => 1]);
 
         return redirect('admin/dashboard')->with('success', 'Recept goedgekeurd!');
     }

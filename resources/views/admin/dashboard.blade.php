@@ -38,7 +38,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <form method="POST" id="{{ $recipe->id }}" action="/admin/recipes/approve/{{ $recipe->id }}">
                                                 @csrf
-{{--                                                @method('DELETE')--}}
+                                                @method('PATCH')
 
                                                 <button class="text-xs text-green-400">Approve</button>
                                             </form>

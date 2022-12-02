@@ -7,6 +7,7 @@ use App\Service\CocktailApi;
 use App\Models\Ingredient;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class RecipeController extends Controller
@@ -55,6 +56,9 @@ class RecipeController extends Controller
 
     protected function store()
     {
+        $imagePath = str_replace('public/', '', request()->file('image')->store('public/recipePics'));
+        $path = Storage::url($imagePath);
+
         $recipe = Recipe::create([
             'user_id' => Auth::user()->id,
             'title' => request('title'),
@@ -62,7 +66,7 @@ class RecipeController extends Controller
             'instructions' => request('instructions'),
             'number_of_servings' => request('number_of_servings'),
             'note' => request('note'),
-            'image' => request()->file('image')->store('public/recipePics'),
+            'image' => $path,
             'validated' => false,
             ]);
 

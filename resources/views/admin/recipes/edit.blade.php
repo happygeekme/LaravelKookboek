@@ -121,7 +121,7 @@
                                value="{{ $recipe->image }}"
                         >
 
-                        <img src="{{ 'public/storage/recipePics' . $recipe->image }}"
+                        <img src="{{ $recipe->image }}"
                              alt="" class="rounded-xl"
                              width="100">
                     </div>
