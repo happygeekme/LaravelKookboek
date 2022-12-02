@@ -148,6 +148,7 @@ class RecipeController extends Controller
 
     public function searchDrinkByName()
     {
+        @dd(request());
         return view('drinks.drinks', [
             'drinks' => $this->drinks->getByName(request(['searchDrink']))
         ]);

@@ -44,7 +44,7 @@
 
     {{ $slot }}
 
-    <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+    <footer class="bottom-0 left-0 w-screen bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
 
         <h5 class="text-3xl">Blijf op de hoogte van nieuwe recepten</h5>
 

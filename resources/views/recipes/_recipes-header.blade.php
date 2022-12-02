@@ -6,22 +6,10 @@
     <h2 class="inline-flex mt-2 text-2xl">Recepten</h2>
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
-        <!-- Search ingredients -->
-        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
-            <form method="GET" action="ingredients/">
-                <input
-                    type="text"
-                    name="searchIngredient"
-                    placeholder="Zoek op ingredient"
-                    class="bg-transparent placeholder-gray-600 font-semibold text-sm"
-                    value="{{ request('searchIngredient') }}"
-                >
-            </form>
-        </div>
 
         <!-- Search recipes -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
-            <form method="GET" action="/recipes/search">
+            <form method="get" action="recipes">
                 <input
                     type="text"
                     name="searchRecipe"
@@ -29,9 +17,18 @@
                     class="bg-transparent placeholder-gray-600 font-semibold text-sm"
                     value="{{ request('searchRecipe') }}"
                 >
+                <input type="submit">
             </form>
         </div>
-        <!--toch liever iets eten -->
+        <!--terug -->
+        <div class="px-5 py-3 border border-blue-500 rounded-full text-blue-500 text-xs uppercase font-semibold inline-block">
+            <a href="/recipes"
+
+               style="font-size: 15px">
+                Alle recepten
+            </a>
+        </div>
+        <!--naar drankjes -->
         <div class="px-5 py-3 border border-blue-500 rounded-full text-blue-500 text-xs uppercase font-semibold inline-block">
             <a href="/drinks"
 
